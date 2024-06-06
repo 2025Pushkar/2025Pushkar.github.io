@@ -1,0 +1,75 @@
+import React from 'react'
+import DevIcon from "devicon-react-svg";
+
+const Services = () => {
+  return (
+    <div id="services" className="services">
+      <h1 className="py-5">Some of the technologies I use</h1>
+        <div className="container">
+          <div className="row">
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="react"/></div>
+                <h3>React</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="azure"/></div>
+                <h3>Azure</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="javascript"/></div>
+                <h3>JavaScript</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="css3"/></div>
+                <h3>CSS3</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="python"/></div>
+                <h3>Python</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="postgresql"/></div>
+                <h3>PostgreSQL</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon icon="bootstrap"/></div>
+                <h3>Bootstrap</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3 col-sm-6">
+              <div className="box">
+                <div className="circle"><DevIcon className="icon" icon="streamline"/></div>
+                <h3>SQL</h3>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+            <h5 className="moreP">and more...</h5>
+    </div>
+  )
+}
+
+export default Services
