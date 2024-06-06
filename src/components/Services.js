@@ -1,5 +1,8 @@
 import React from 'react';
-import DevIcon from "devicon-react-svg";
+import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaDatabase } from 'react-icons/fa';
+import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftsqlserver, SiPostgresql, SiPowerbi, SiTableau, SiAzuredevops, SiMaterialui, SiTailwindcss, SiBootstrap } from 'react-icons/si';
+import { MdDataUsage, MdEngineering } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
+import { DiMaterializecss } from 'react-icons/di';
 
 const Services = () => {
   return (
@@ -9,112 +12,120 @@ const Services = () => {
 
         {/* Programming Languages */}
         <h2>Programming Languages</h2>
-        <div className="row">
+        <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="java"/></div>
+              <div className="circle"><FaJava className="icon" /></div>
               <h3>Java</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="python"/></div>
+              <div className="circle"><FaPython className="icon" /></div>
               <h3>Python</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="cplusplus"/></div>
+              <div className="circle"><SiCplusplus className="icon" /></div>
               <h3>C++</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="javascript"/></div>
+              <div className="circle"><SiJavascript className="icon" /></div>
               <h3>JavaScript</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="matlab"/></div>
-              <h3>MATLAB</h3>
             </div>
           </div>
         </div>
 
         {/* Web Development */}
         <h2>Web Development</h2>
-        <div className="row">
+        <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="html5"/></div>
+              <div className="circle"><FaHtml5 className="icon" /></div>
               <h3>HTML5</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="css3"/></div>
+              <div className="circle"><FaCss3Alt className="icon" /></div>
               <h3>CSS3</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="react"/></div>
+              <div className="circle"><FaReact className="icon" /></div>
               <h3>React</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="nextjs"/></div>
+              <div className="circle"><SiNextdotjs className="icon" /></div>
               <h3>Next.JS</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="bootstrap"/></div>
+              <div className="circle"><FaBootstrap className="icon" /></div>
               <h3>Bootstrap</h3>
+            </div>
+          </div>
+
+          <div className="col-md-3 col-sm-6">
+            <div className="box">
+              <div className="circle"><DiMaterializecss className="icon" /></div>
+              <h3>Material-UI</h3>
+            </div>
+          </div>
+
+          <div className="col-md-3 col-sm-6">
+            <div className="box">
+              <div className="circle"><SiTailwindcss className="icon" /></div>
+              <h3>Tailwind CSS</h3>
             </div>
           </div>
         </div>
 
+
         {/* BI/ETL Tools */}
         <h2>Business Intelligence & ETL Tools</h2>
-        <div className="row">
+        <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="powerbi"/></div>
+              <div className="circle"><SiPowerbi className="icon" /></div>
               <h3>Power BI</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="tableau"/></div>
+              <div className="circle"><SiTableau className="icon" /></div>
               <h3>Tableau</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="gooddata"/></div>
+              <div className="circle"><MdDataUsage className="icon" /></div>
               <h3>GoodData BI</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="azure"/></div>
+              <div className="circle"><SiAzuredevops className="icon" /></div>
               <h3>Azure Data Factory</h3>
             </div>
           </div>
@@ -122,25 +133,25 @@ const Services = () => {
 
         {/* Databases */}
         <h2>Databases</h2>
-        <div className="row">
+        <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="postgresql"/></div>
+              <div className="circle"><SiPostgresql className="icon" /></div>
               <h3>PostgreSQL</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="microsoftsqlserver"/></div>
+              <div className="circle"><SiMicrosoftsqlserver className="icon" /></div>
               <h3>Microsoft SQL Server</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><DevIcon className="icon" icon="azure"/></div>
+              <div className="circle"><SiAzuredevops className="icon" /></div>
               <h3>Azure SQL Database</h3>
             </div>
           </div>
