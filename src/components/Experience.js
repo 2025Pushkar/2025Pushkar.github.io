@@ -1,103 +1,124 @@
 import React from "react";
-import bestSeller from "../image/bestseller.png";
 
 const Experience = () => {
   return (
     <div id="experience" className="experience">
       <div className="d-flex justify-content-center my-5">
-        <h1>experience</h1>
+        <h1 className="font-weight-bold text-dark">Experience</h1>
       </div>
-      <div className="container experience-wrapper">
-        <div className="timeline-block timeline-block-right">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>AUG 2021</h3>
-            <p>
-              Created a Udemy course which has been best seller for 3 months in
-              a row{" "}
-              <a
-                href="https://www.udemy.com/course/build-a-portfolio-with-reactjs/"
-                target="_blank"
-                rel="noreferrer"
-                title="https://www.udemy.com/course/build-a-portfolio-with-reactjs/"
-              >
-                Check it out here
-              </a>
-              <img src={bestSeller} alt="preview of course" style={{maxWidth: '100%'}}/>
-            </p>
+      <div className="container">
+
+        {/* Academic Experience */}
+        <h2 className="text-center mb-4 font-weight-bold text-dark">Academic Experience</h2>
+        <div className="timeline experience-wrapper mb-4">
+          <div className="row">
+            <div className="col-md-6 timeline-block timeline-block-left">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">JAN 2024 - EXPECTED DEC 2025</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Master of Science in Computer Science</span><br />
+                  <em>Binghamton University, State University of New York</em>
+                </p>
+                <ul>
+                  <li>Cumulative GPA: 3.76/4.00</li>
+                  <li>Relevant Coursework: Data Structures and Algorithms, programming languages, Machine Learning, Programming Systems and Tools, Web Development.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-6 offset-md-6 timeline-block timeline-block-right">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">AUG 2017 - AUG 2021</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Bachelor of Engineering in Electronics and Communication</span><br />
+                  <em>PES Institute of Technology, Bangalore, India</em>
+                </p>
+                <ul>
+                  <li>Cumulative GPA: 3.09/4.00</li>
+                  <li>Relevant Coursework: Data Structures and Algorithms, Computer Networks, Object-Oriented Programming using C++, Python Programming.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="timeline-block timeline-block-left">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>FEB-PRESENT 2021</h3>
-            <p>
-              started my first job as a Full stack developer at Totally Inview
-              Inc. (bowery lightning)
-            </p>
+        {/* Professional Experience */}
+        <h2 className="text-center mb-4 font-weight-bold text-dark">Professional Experience</h2>
+        <div className="timeline experience-wrapper mb-4">
+          <div className="row">
+            <div className="col-md-6 offset-md-6 timeline-block timeline-block-right">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">DEC 2021 - DEC 2023</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Data Engineer</span><br />
+                  <em>KrtrimaIQ Cognitive Solutions</em>
+                </p>
+                <ul>
+                  <li>Developed Business Intelligence solutions and Digital Assistants using Next.JS.</li>
+                  <li>Built the company’s website from scratch using Next.js, implementing SEO best practices and integrating Google Analytics.</li>
+                  <li>Specialized in React.JS for effective data visualization using open-source Business Intelligence tools like Power BI and GoodData BI.</li>
+                  <li>Handled data with Python for analysis and building in-house authentication modules for proprietary products.</li>
+                  <li>Managed ETL processes in Azure Data Factory, implementing best practices and handling slowly changing dimensions and change data capture.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-6 timeline-block timeline-block-left">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">SEP 2021 - DEC 2021</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Implementation Consultant</span><br />
+                  <em>Alvaria INC</em>
+                </p>
+                <ul>
+                  <li>Worked with Workforce Management System and cloud-based web services.</li>
+                  <li>Analyzed customer data using complex SQL and NoSQL scripts in traditional DBMS environments.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-6 offset-md-6 timeline-block timeline-block-right">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">MAR 2021 - APR 2021</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Machine Learning Intern</span><br />
+                  <em>Exposys Data Labs</em>
+                </p>
+                <ul>
+                  <li>Deployed machine learning models and contributed to data-driven solutions.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="timeline-block timeline-block-right">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>DEC-JAN 2020-2021</h3>
-            <p>
-              started side projects and finished Advanced CSS and Sass course
-              (50 hours)
-            </p>
+        {/* Leadership Experience */}
+        <h2 className="text-center mb-4 font-weight-bold text-dark">Leadership Experience</h2>
+        <div className="timeline experience-wrapper mb-4">
+          <div className="row">
+            <div className="col-md-6 timeline-block timeline-block-left">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">MAY 2019 - APR 2020</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Publicity Head</span><br />
+                  <em>IEEE Solid States and Photonics Society</em><br />
+                  <span>PES Institute of Technology, Bangalore, India</span>
+                </p>
+                <ul>
+                  <li>Developed and executed marketing strategies, including social media campaigns and promotional materials.</li>
+                  <li>Collaborated with other IEEE board members to plan and organize successful technical and non-technical events.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="timeline-block timeline-block-left">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>NOV-DEC 2020</h3>
-            <p>
-              Finished taking Advanced Javascript course and React course (110
-              hours)
-            </p>
-          </div>
-        </div>
-
-        <div className="timeline-block timeline-block-right">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>DEC 2021- PRESENT</h3>
-            <p>
-              Working as a Data Engineer(Azure)/Analyst(PowerBI,GoodData)/Software developer(reactjs) in KrtrimaiQ Cognitive Solutions.
-            </p>
-          </div>
-        </div>
-
-        <div className="timeline-block timeline-block-left">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>AUG 2021-DEC 2021</h3>
-            <p>
-              Worked as Implementation consultant in Alvaria Softwares, My work was mainly around dealing with Relational DataBase of our clients (Callcenters across globe).
-            </p>
-          </div>
-        </div>
-        <div className="timeline-block timeline-block-right">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>MARCH 2021 - MAY 2021</h3>
-            <p>
-              During this 2 month period, I did my internship in Spookfish Innovations(Software developer) & Exposys Data Labs(ML Engineer).
-            </p>
-          </div>
-        </div>
-        <div className="timeline-block timeline-block-right">
-          <div className="marker"></div>
-          <div className="timeline-content">
-            <h3>AUG 2017 - AUG 2021</h3>
-            <p>
-              Graduated from PES SOUTH CAMPUS, BANGALORE with majors Electronics and Telecommunication Engineering. 
-            </p>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

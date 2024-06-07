@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaDatabase } from 'react-icons/fa';
-import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftsqlserver, SiPostgresql, SiPowerbi, SiTableau, SiAzuredevops, SiMaterialui, SiTailwindcss, SiBootstrap } from 'react-icons/si';
+import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws } from 'react-icons/si';
 import { MdDataUsage, MdEngineering } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
 import { DiMaterializecss } from 'react-icons/di';
 
@@ -44,7 +44,7 @@ const Services = () => {
         </div>
 
         {/* Web Development */}
-        <h2>Web Development</h2>
+        <h2 className='pt-3'>Web Development</h2>
         <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
@@ -64,7 +64,7 @@ const Services = () => {
           <div className="col-md-3 col-sm-6">
             <div className="box">
               <div className="circle"><FaReact className="icon" /></div>
-              <h3>React</h3>
+              <h3>React.JS</h3>
             </div>
           </div>
 
@@ -97,9 +97,27 @@ const Services = () => {
           </div>
         </div>
 
+        {/* Cloud Technologies */}
+        <h2 className='pt-3'>Cloud Technologies</h2>
+        <div className="row d-flex justify-content-around">
+          <div className="col-md-3 col-sm-6 col-12 mb-4">
+            <div className="box">
+              <div className="circle"><SiAmazonaws className="icon" /></div>
+              <h3>AWS</h3>
+            </div>
+          </div>
+          <div className="col-md-3 col-sm-6 col-12 mb-4">
+            <div className="box">
+              <div className="circle"><SiMicrosoftazure className="icon" /></div>
+              <h3>Azure</h3>
+            </div>
+          </div>
+        </div>
+
+
 
         {/* BI/ETL Tools */}
-        <h2>Business Intelligence & ETL Tools</h2>
+        <h2 className='pt-3'>Business Intelligence & ETL Tools</h2>
         <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
@@ -125,14 +143,14 @@ const Services = () => {
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><SiAzuredevops className="icon" /></div>
-              <h3>Azure Data Factory</h3>
+              <div className="circle"><SiMicrosoftazure className="icon" /></div>
+              <h3>ADF</h3>
             </div>
           </div>
         </div>
 
         {/* Databases */}
-        <h2>Databases</h2>
+        <h2 className='pt-3'>Databases</h2>
         <div className="row d-flex justify-content-around">
 
           <div className="col-md-3 col-sm-6">
@@ -144,22 +162,22 @@ const Services = () => {
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><SiMicrosoftsqlserver className="icon" /></div>
-              <h3>Microsoft SQL Server</h3>
+              <div className="circle"><SiMysql className="icon" /></div>
+              <h3>MySQL</h3>
             </div>
           </div>
 
           <div className="col-md-3 col-sm-6">
             <div className="box">
-              <div className="circle"><SiAzuredevops className="icon" /></div>
-              <h3>Azure SQL Database</h3>
+              <div className="circle"><SiMicrosoftaccess className="icon" /></div>
+              <h3>Azure SQL DB</h3>
             </div>
           </div>
 
         </div>
 
       </div>
-      <h5 className="moreP">and more...</h5>
+
     </div>
   )
 }

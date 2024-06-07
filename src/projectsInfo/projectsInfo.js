@@ -1,191 +1,104 @@
-//add project on top for latest
-import chat from "../image/projectsicon/9chat.gif";
-import touringNat from "../image/projectsicon/touringnat.gif";
-import portfoliov1 from "../image/projectsicon/portfoliov1.JPG";
-import map from "../image/projectsicon/map.png";
-import tindog from "../image/projectsicon/tindog.png";
-import rememberSeq from "../image/projectsicon/remember-seq.png";
-import drumkit from "../image/projectsicon/drumkit.png";
-import interactiveparticles from "../image/projectsicon/interactiveparticles.gif";
-import generativeArt from "../image/projectsicon/generative_art.png";
-import gorjeo from "../image/projectsicon/gorjeo3.jpg";
-import spartikus from "../image/projectsicon/spartikus2.jpg";
-import stooltracker from "../image/projectsicon/stooltracker.jpg";
-import weatherteller from "../image/projectsicon/weatherteller.jpg";
-import todos from "../image/projectsicon/todos.png";
-import calc from "../image/projectsicon/calc.png";
-import udemyPortfolio from "../image/projectsicon/udemyPortfolio.png";
-import naujcommerce from "../image/projectsicon/naujcommerce.png";
-import decomelos from "../image/projectsicon/decomelos.png";
 import tictactie from "../image/projectsicon/tictactoe.png";
-import oaFinancial from "../image/projectsicon/oafinancial.png";
-import budgets from "../image/projectsicon/budgets.png";
-
-//add project on top for latest
 
 const projectsInfo = [
   {
-    name: budgets,
-    link: "https://jc-budget.netlify.app/",
-    desc: "Budget app",
-    summary: "Budget app site, save data using local storage",
-    summary2: "React",
+    name: "Seamless Integration: RosaeNLG Narratives Meet PowerBI",
+    link: "https://github.com/2015pushkar/Seamless-Integration",
+    desc: "Integration project",
+    summary: "Integration of RosaeNLG natural language narratives with PowerBI using TypeScript",
+    summary2: "TypeScript, PowerBI, RosaeNLG",
+    imgSrc: tictactie,
+    categories:"Data Analytics",
   },
   {
-    name: oaFinancial,
-    link: "https://oafinan.netlify.app/",
-    desc: "Project for OA Financial",
-    summary: (
-      <a
-        href="https://www.oldamericanfinancial.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        https://www.oldamericanfinancial.com/
-      </a>
-    ),
-    summary2: "They used my design",
+    name: "Sales Dashboard using React-charts-JS library",
+    link: "https://github.com/2015pushkar/Sales-Dashboard",
+    desc: "Interactive sales dashboard",
+    summary: "Interactive sales dashboards with React-charts-JS-2 library",
+    summary2: "React, React-charts-JS-2",
+    imgSrc: tictactie,
+    categories:"Data Analytics",
   },
   {
-    name: naujcommerce,
-    link: "https://naujcommerce.netlify.app/",
-    desc: "Nauj Commerce",
-    summary: "Just an e-commerce site",
-    summary2: "React",
+    name: "Sales Analytics Dashboard using GoodData BI and React.JS",
+    link: "https://github.com/2015pushkar/Sales-Analytics-Dashboard",
+    desc: "Sales analytics dashboard",
+    summary: "Sales analytics dashboards using GoodData BI and React.JS",
+    summary2: "GoodData BI, React.JS",
+    imgSrc: tictactie,
+    categories:"Data Analytics",
   },
   {
-    name: udemyPortfolio,
-    link: "https://juancamachoudemyportfolio.netlify.app/",
-    desc: "Tutorial I made at udemy.com",
-    summary: (
-      <a
-        href="https://www.udemy.com/course/build-a-portfolio-with-reactjs/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        https://www.udemy.com/course/build-a-portfolio-with-reactjs/
-      </a>
-    ),
-    summary2: "React",
+    name: "Digital Assistants Chatbot using Next.JS and Rasa",
+    link: "https://github.com/2015pushkar/Digital-Assistants-Chatbot",
+    desc: "Digital assistants chatbot",
+    summary: "Developed digital assistants using Next.js and Rasa",
+    summary2: "Next.JS, Rasa",
+    imgSrc: tictactie,
+    categories:"Web Development",
   },
   {
-    name: tictactie,
-    link: "https://jctic-tac-toe.netlify.app/",
-    desc: "A game..",
-    summary: "called tic tac toe",
-    summary2: "React",
+    name: "Big Data - Type 2 SCD in Azure Data Factory",
+    link: "https://github.com/2015pushkar/Big-Data-SCD",
+    desc: "Type 2 SCD implementation",
+    summary: "Implemented Type 2 Slowly Changing Dimensions (SCD) in Azure Data Factory",
+    summary2: "Azure Data Factory",
+    imgSrc: tictactie,
+    categories:"Data Engineering",
   },
   {
-    name: decomelos,
-    link: "https://decomelos.netlify.app/",
-    desc: "Page for a client",
-    summary: "Page for a client",
-    summary2: "React",
+    name: "Loan Eligibility Prediction (Machine Learning)",
+    link: "https://github.com/2015pushkar/Loan-Eligibility-Prediction",
+    desc: "Loan eligibility prediction",
+    summary: "Classification model to predict loan eligibility based on customer application data",
+    summary2: "Machine Learning, Classification",
+    imgSrc: tictactie,
+    categories:"Machine Learning",
   },
   {
-    name: chat,
-    link: "https://chat-app-juancamacho.netlify.app/",
-    desc: "9 Chat",
-    summary: "An app to chat using Firebase as a databse",
-    summary2: "React",
+    name: "Book Recommendation System (Collaborative Filtering)",
+    link: "https://github.com/2015pushkar/Book-Recommendation-System",
+    desc: "Book recommendation system",
+    summary: "Recommendation system suggesting items to users based on past interactions",
+    summary2: "Collaborative Filtering",
+    imgSrc: tictactie,
+    categories:"Machine Learning",
   },
   {
-    name: touringNat,
-    link: "https://touringnat.netlify.app/",
-    desc: "Touring Nat",
-    summary: "The powers of CSS",
-    summary2: "HTML | CSS | SASS",
+    name: "Diabetes Prediction (Support Vector Machines)",
+    link: "https://github.com/2015pushkar/Diabetes-Prediction-SVM",
+    desc: "Diabetes prediction",
+    summary: "Analyzed diabetes dataset attributes and applied SVM model for accurate classification",
+    summary2: "Support Vector Machines",
+    imgSrc: tictactie,
+    categories:"Machine Learning",
   },
   {
-    name: portfoliov1,
-    link: "https://juancamachoportfolio-first.netlify.app/",
-    desc: "First Version of my portfolio",
-    summary: "When I graduated from General Assembly School",
-    summary2: "HTML | CSS | JavaScript | Bootstrap",
+    name: "COVID-19 Data Analysis",
+    link: "https://github.com/2015pushkar/COVID-19-Data-Analysis",
+    desc: "COVID-19 data analysis",
+    summary: "Performed exploratory data analysis on COVID-19 datasets",
+    summary2: "Data Analysis",
+    imgSrc: tictactie,
+    categories:"Data Analytics",
   },
   {
-    name: map,
-    link: "https://jcgooglemapsreplica.netlify.app/",
-    desc: "Google map clone project",
-    summary: "This app recreates a functional GPS system",
-    summary2: "JavaScript | CSS | HTML",
+    name: "Tic-Tac-Toe Game (C Language)",
+    link: "https://github.com/2015pushkar/Tic-Tac-Toe-Game",
+    desc: "Tic-Tac-Toe game",
+    summary: "Developed a Tic-Tac-Toe game following best software development practices",
+    summary2: "C Language",
+    imgSrc: tictactie,
+    categories:"Web development",
   },
   {
-    name: tindog,
-    link: "https://tindogclone.netlify.app/",
-    desc: "Tindog clone project",
-    summary: "Tinder for dogs",
-    summary2: "HTML | CSS | JavaScript | Bootstrap",
-  },
-  {
-    name: rememberSeq,
-    link: "https://rememberthecolor.netlify.app/",
-    desc: "Remember the sequence game",
-    summary: "remember the sequence of the colors, with sounds too",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: drumkit,
-    link: "https://browserdrumkit.netlify.app/",
-    desc: "Drumkit game",
-    summary: "make some beats!",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: interactiveparticles,
-    link: "https://interactiveparticles.netlify.app/",
-    desc: "Interactive particles",
-    summary: "this is just a cool effect when hovering with your mouse",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: generativeArt,
-    link: "https://generativeart.netlify.app/",
-    desc: "Generative Art project",
-    summary: "click and drag to draw whatever you want",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: gorjeo,
-    link: "https://gorjeo.netlify.app/",
-    desc: "Gorjeo project",
-    summary: "last project for the bootcamp at General Assembly",
-    summary2: "React | Ruby | Rails | CSS | PostgreSQL",
-  },
-  {
-    name: spartikus,
-    link: "https://sportikus.netlify.app/",
-    desc: "Spartikus project",
-    summary: "third project for the bootcamp at General Assembly",
-    summary2: "React | Mongodb",
-  },
-  {
-    name: stooltracker,
-    link: "https://stooltracker.netlify.app/",
-    desc: "Stool Tracker project",
-    summary: "second project for the bootcamp at General Assembly",
-    summary2: "React | Airtable DB",
-  },
-  {
-    name: weatherteller,
-    link: "https://theweatherteller.netlify.app/",
-    desc: "Weather Teller project",
-    summary: "my very first project for the bootcamp at General Assembly",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: todos,
-    link: "https://juancamachotodoapp.netlify.app/",
-    desc: "Todos project",
-    summary: "second side project to train skills",
-    summary2: "HTML | CSS | JavaScript",
-  },
-  {
-    name: calc,
-    link: "https://calculator-jc.netlify.app/",
-    desc: "Calculator project",
-    summary: "first side project to train my skills",
-    summary2: "HTML | CSS | JavaScript",
+    name: "Relay Assisted Pliable Index Coding",
+    link: "https://github.com/2015pushkar/Relay-Assisted-PIC",
+    desc: "Pliable Index Coding project",
+    summary: "Implemented network coding with relay assistance to optimize communication system performance",
+    summary2: "Network Coding",
+    imgSrc: tictactie,
+    categories:"Networking",
   },
 ];
 
