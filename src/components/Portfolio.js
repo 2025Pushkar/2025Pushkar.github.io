@@ -1,56 +1,38 @@
 import React from "react";
+import projectsInfo from "../projectsInfo/projectsInfo";
 // --------------FONT AWESOME IMPORTS --------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearchPlus } from "@fortawesome/free-solid-svg-icons";
-// REACT POPUPBOX
-import {
-  PopupboxManager,
-  PopupboxContainer,
-} from "react-popupbox";
-import "react-popupbox/dist/react-popupbox.css";
-import projectsInfo from "../projectsInfo/projectsInfo";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Portfolio = () => {
-  const popupboxConfig = {
-    titleBar: {
-      enable: false,
-      text: "Project",
-    },
-    fadeIn: true,
-    fadeInSpeed: 500,
-  };
-
-  const openPopupbox = (a) => {
-    const content = (
-      <>
-        <div>
-          <b>{a.desc}</b>
-          <hr />
-          <img
-            className="portfolio-image-popupbox"
-            src={a.imgSrc}
-            alt={a.desc}
-          />
-        </div>
-        <h5 className="summary-popup">{a.summary}</h5>
-        <h5 className="summary-popup">{a.summary2}</h5>
-        <p className="hyper-link" onClick={() => window.open(a.link)}>
-          <p className="link-popup">Click here to go to site</p>
-        </p>
-      </>
-    );
-    PopupboxManager.open({ content });
-  };
-
   const renderProjects = (category) => {
     return projectsInfo
       .filter((project) => project.categories === category)
       .map((a, idx) => (
-        <div key={idx} className="portfolio-image-box" onClick={() => openPopupbox(a)}>
-          <img className="portfolio-image" src={a.imgSrc} alt={a.desc} />
-          <div className="summary-popup">{a.summary}</div>
-          <div className="overflow"></div>
-          <FontAwesomeIcon className="portfolio-icon" icon={faSearchPlus} />
+        <div key={idx} className="col-md-4 mb-4 d-flex align-items-stretch">
+          <div className="card">
+            <img src={a.imgSrc} className="card-img-top" alt={a.desc} />
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">{a.name}</h5>
+              <p className="card-text">{a.summary}</p>
+              <div className="mb-3">
+                {a.summary2.split(", ").map((tag, index) => (
+                  <span key={index} className="badge badge-pill badge-info mr-1">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {a.type === "company" ? (
+                <a href={a.link} target="_blank" rel="noreferrer" className="btn btn-primary mt-auto">
+                  Visit <FontAwesomeIcon icon={faExternalLinkAlt} />
+                </a>
+              ) : (
+                <button className="btn btn-secondary mt-auto" disabled>
+                  Client Project
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       ));
   };
@@ -66,32 +48,30 @@ const Portfolio = () => {
           </a>
         </p>
 
-        <h2 className="text-center py-4">Data Analytics</h2>
-        <div className="image-box-wrapper row justify-content-center">
-          {renderProjects("Data Analytics")}
+        <h2 className="text-center py-4">Data Analysis</h2>
+        <div className="row justify-content-center">
+          {renderProjects("Data Analysis")}
         </div>
 
         <h2 className="text-center py-4">Web Development</h2>
-        <div className="image-box-wrapper row justify-content-center">
+        <div className="row justify-content-center">
           {renderProjects("Web Development")}
         </div>
 
         <h2 className="text-center py-4">Data Engineering</h2>
-        <div className="image-box-wrapper row justify-content-center">
+        <div className="row justify-content-center">
           {renderProjects("Data Engineering")}
         </div>
 
         <h2 className="text-center py-4">Machine Learning</h2>
-        <div className="image-box-wrapper row justify-content-center">
+        <div className="row justify-content-center">
           {renderProjects("Machine Learning")}
         </div>
 
         <h2 className="text-center py-4">Networking</h2>
-        <div className="image-box-wrapper row justify-content-center">
+        <div className="row justify-content-center">
           {renderProjects("Networking")}
         </div>
-
-        <PopupboxContainer {...popupboxConfig} />
       </div>
     </div>
   );
