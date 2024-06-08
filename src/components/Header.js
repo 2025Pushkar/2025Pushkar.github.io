@@ -19,11 +19,11 @@ function Header() {
   };
 
   return (
-    <section id="intro" style={{ backgroundColor: "rgb(245, 245, 245)", color: "rgb(52, 58, 64)" }} className="text-center py-5">
+    <section id="home" style={{ backgroundColor: "rgb(245, 245, 245)", color: "rgb(52, 58, 64)" }} className="text-center py-5">
       <div className="container">
-        <div className="row align-items-center justify-content-center" style={{ height: "40vh" }}>
+        <div className="row align-items-center justify-content-center" style={{ height: "100vh", overflow: "hidden" }}>
           <div className="col-12">
-            <h1 className="display-4 font-weight-bold" style={{ color: "rgb(52, 58, 64)" }}>
+            <h1 className="display-4 font-weight-bold pt-3" style={{ color: "rgb(52, 58, 64)" }}>
               Pushkar Pramod Wani
             </h1>
             <h2 className="h4 font-weight-semibold" style={{ color: "rgb(108, 117, 125)" }}>

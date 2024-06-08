@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaDatabase, FaCloud } from 'react-icons/fa';
+import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaCloud } from 'react-icons/fa';
 import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb } from 'react-icons/si';
-import { MdDataUsage, MdEngineering } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
+import { MdDataUsage } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
 import { DiMaterializecss } from 'react-icons/di';
 
 const Services = () => {
