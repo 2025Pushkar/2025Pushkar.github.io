@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
   <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
     <div className="container">
-      <Link smooth={true} to="home" offset={-50} className="navbar-brand" href="#">Juan Camacho</Link>
+      <Link smooth={true} to="home" offset={-50} className="navbar-brand" href="#">Pushkar Wani</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <FontAwesomeIcon icon={faBars} style={{color: 'white'}}/>
       </button> 
@@ -30,9 +30,9 @@ const Navbar = () => {
           <li className="nav-item">
             <Link smooth={true} to="portfolio" offset={-50} className="nav-link" href="#">portfolio</Link>
           </li>
-          <li className="nav-item">
-            <Link smooth={true} to="contact" offset={-50} className="nav-link" href="#">contact</Link>
-          </li>
+          {/*<li className="nav-item">
+            <Link smooth={true} to="contact" offset={-50} className="nav-link" href="#">Certifications</Link>
+          </li>*/}
         </ul>
       </div>
     </div>

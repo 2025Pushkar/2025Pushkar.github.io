@@ -1,6 +1,5 @@
 import React from "react";
 import projectsInfo from "../projectsInfo/projectsInfo";
-// --------------FONT AWESOME IMPORTS --------------------
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,7 +8,7 @@ const Portfolio = () => {
     return projectsInfo
       .filter((project) => project.categories === category)
       .map((a, idx) => (
-        <div key={idx} className="col-md-4 mb-4 d-flex align-items-stretch">
+        <div key={idx} className="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
           <div className="card">
             <img src={a.imgSrc} className="card-img-top" alt={a.desc} />
             <div className="card-body d-flex flex-column">
@@ -48,14 +47,14 @@ const Portfolio = () => {
           </a>
         </p>
 
-        <h2 className="text-center py-4">Data Analysis</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Data Analysis")}
-        </div>
-
         <h2 className="text-center py-4">Web Development</h2>
         <div className="row justify-content-center">
           {renderProjects("Web Development")}
+        </div>
+
+        <h2 className="text-center py-4">Data Analysis</h2>
+        <div className="row justify-content-center">
+          {renderProjects("Data Analysis")}
         </div>
 
         <h2 className="text-center py-4">Data Engineering</h2>

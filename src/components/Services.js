@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaDatabase } from 'react-icons/fa';
-import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaDatabase, FaCloud } from 'react-icons/fa';
+import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb } from 'react-icons/si';
 import { MdDataUsage, MdEngineering } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
 import { DiMaterializecss } from 'react-icons/di';
 
@@ -112,6 +112,12 @@ const Services = () => {
               <h3>Azure</h3>
             </div>
           </div>
+          <div className="col-md-3 col-sm-6 col-12 mb-4">
+            <div className="box">
+              <div className="circle"><FaCloud className="icon" /></div>
+              <h3>GCP</h3>
+            </div>
+          </div>
         </div>
 
 
@@ -171,6 +177,13 @@ const Services = () => {
             <div className="box">
               <div className="circle"><SiMicrosoftaccess className="icon" /></div>
               <h3>Azure SQL DB</h3>
+            </div>
+          </div>
+
+          <div className="col-md-3 col-sm-6">
+            <div className="box">
+              <div className="circle"><SiMongodb className="icon" /></div>
+              <h3>MongoDB</h3>
             </div>
           </div>
 

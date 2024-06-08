@@ -37,7 +37,7 @@ const Contacts = () => {
       <div id="contact" className="contacts">
         <div className="text-center">
         <h1>contact me</h1>
-        <p>Please fill out the form and describe your project, and will contact you as soon as possible or email me at Pushkar</p>
+        <p>Please fill out the form to contact me or email me at<span class="badge bg-light text-dark">pwani@binghamton.edu</span></p>
         <span className="success-message">{successMessage}</span>
         </div>
         <div className="container">

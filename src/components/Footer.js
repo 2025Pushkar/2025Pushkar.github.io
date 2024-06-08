@@ -1,31 +1,26 @@
 import React from 'react';
-import {Link} from 'react-scroll';
-import {
-  FacebookShareButton,
-  FacebookIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  RedditShareButton,
-  RedditIcon,
-  LinkedinShareButton,
-  LinkedinIcon
-
-} from "react-share";
+import { Link } from 'react-scroll';
+import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Footer = () => {
+  const handleIconClick = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
-    <div className="footer" style={{"backgroundColor":"#000000"}}>
+    <div className="footer" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="d-flex">
-              <p>Bangalore, IN</p>
+              <p>Binghamton, NY, USA</p>
             </div>
             <div className="d-flex">
-              <a href="tel:555-555-5555">+91 7795914084</a>
+              <a href="tel:+16072979920">+1 (607) 297-9920</a>
             </div>
             <div className="d-flex">
-              <p>pushkarwani2015@gmail.com</p>
+              <p>pwani@binghamton.edu</p>
             </div>
           </div>
           <div className="col-lg-3 col-md-2 col-sm-6">
@@ -35,7 +30,7 @@ const Footer = () => {
                 <br />
                 <Link smooth={true} to="about" className="footer-nav">About me</Link>
                 <br />
-                <Link smooth={true} to="services" className="footer-nav">Techonologies</Link>
+                <Link smooth={true} to="services" className="footer-nav">Technologies</Link>
                 <br />
               </div>
               <div className="col">
@@ -43,40 +38,32 @@ const Footer = () => {
                 <br />
                 <Link smooth={true} to="portfolio" className="footer-nav">Portfolio</Link>
                 <br />
-                <Link smooth={true} to="contact" className="footer-nav">Contact me</Link>
+                {/*<Link smooth={true} to="contact" className="footer-nav">Contact me</Link>*/}
               </div>
             </div>
           </div>
-          <div className="col-lg-5 col-md-5 colo-sm-6 align-items-center">
+          <div className="col-lg-5 col-md-5 col-sm-6 align-items-center">
             <div className="d-flex justify-content-center">
-              <FacebookShareButton 
-              url={"https://juancamachoportfolio.netlify.app/"}
-              quote={"FullStack Developer"}
-              hashtag="#React.js"
-              >
-                <FacebookIcon className="mx-3" size={36} />
-              </FacebookShareButton>
-              <TwitterShareButton 
-              url={"https://juancamachoportfolio.netlify.app/"}
-              quote={"FullStack Developer"}
-              hashtag="#React.js"
-              >
-                <TwitterIcon className="mx-3" size={36} />
-              </TwitterShareButton>
-              <RedditShareButton 
-              url={"https://juancamachoportfolio.netlify.app/"}
-              quote={"FullStack Developer"}
-              hashtag="#React.js"
-              >
-                <RedditIcon className="mx-3" size={36} />
-              </RedditShareButton>
-              <LinkedinShareButton 
-              url={"https://juancamachoportfolio.netlify.app/"}
-              quote={"FullStack Developer"}
-              hashtag="#React.js"
-              >
-                <LinkedinIcon className="mx-3" size={36} />
-              </LinkedinShareButton>
+              <FaLinkedin
+                size={36}
+                onClick={() => handleIconClick('https://www.linkedin.com/in/pushkar-wani-44bb10190/')}
+                style={{ cursor: 'pointer', color: '#0077b5', margin: '0 10px' }}
+              />
+              <FaGithub
+                size={36}
+                onClick={() => handleIconClick('https://github.com/2015pushkar')}
+                style={{ cursor: 'pointer', color: '#ffff', margin: '0 10px' }}
+              />
+              <SiLeetcode
+                size={36}
+                onClick={() => handleIconClick('https://leetcode.com/u/pushkarwani/')}
+                style={{ cursor: 'pointer', color: '#FFA116', margin: '0 10px' }}
+              />
+              <FaInstagram
+                size={36}
+                onClick={() => handleIconClick('https://www.instagram.com/pushkar_wani_2000/?hl=en')}
+                style={{ cursor: 'pointer', color: '#E1306C', margin: '0 10px' }}
+              />
             </div>
             <p className="pt-3 text-center">
               Copyright&copy;
@@ -86,7 +73,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
