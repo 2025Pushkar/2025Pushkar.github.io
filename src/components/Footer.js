@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
+import { SiLeetcode, SiGeeksforgeeks } from 'react-icons/si';
 
 const Footer = () => {
   const handleIconClick = (url) => {
@@ -53,6 +53,11 @@ const Footer = () => {
                 size={36}
                 onClick={() => handleIconClick('https://github.com/2015pushkar')}
                 style={{ cursor: 'pointer', color: '#ffff', margin: '0 10px' }}
+              />
+              <SiGeeksforgeeks
+                size={36}
+                onClick={() => handleIconClick('https://www.geeksforgeeks.org/user/pushkarwani2015/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user')}
+                style={{ cursor: 'pointer', color: '#28a745', margin: '0 10px' }}
               />
               <SiLeetcode
                 size={36}
