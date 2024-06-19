@@ -1,6 +1,9 @@
 import React from 'react';
-import author from '../image/me.png';
+// import author from '../image/me.png';
+import author from '../image/me_green_bg.png';
 import SectionTitle from './vanilla/SectionTitle';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import OpenToWorkBadge from './OpenToWork';
 
 const AboutMe = () => {
   return (
@@ -97,17 +100,23 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="col-lg-5 col-md-12 text-center">
-              <img
-                src={author}
-                alt="Pushkar's Portrait"
-                className="border border-muted rounded-circle"
-                style={{
-                  minWidth: "300px",
-                  minHeight: "300px",
-                  maxWidth: "400px",
-                  maxHeight: "400px",
-                }}
-              />
+              <div className="open-to-work-wrapper mx-auto">
+                <img
+                  src={author}
+                  alt="Pushkar's Portrait"
+                  className="border border-muted rounded-circle open-to-work-image"
+                  style={{
+                    minWidth: "300px",
+                    minHeight: "300px",
+                    maxWidth: "400px",
+                    maxHeight: "400px",
+                  }}
+                />
+                <div className="open-to-work-badge sm-px-3">
+                  <div className="open-to-work-circle"></div>
+                  <div className="open-to-work-text">#OpenToWork</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

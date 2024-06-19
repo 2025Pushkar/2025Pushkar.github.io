@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
+// import DigitalAssistant from "./components/DigitalAssistant";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Services />
       <Experience />
       <Portfolio />
+      {/*<DigitalAssistant/>*/}
       <Footer />
     </>
   );
