@@ -65,7 +65,7 @@ const Services = () => {
               <ul className="nav flex-column custom-nav-pills">
                 <li className="nav-item mb-2">
                   <button
-                    className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active' : ''}`}
+                    className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active px-2' : ''}`}
                     onClick={() => setActiveTab('languages')}
                   >
                     Programming Languages
@@ -73,7 +73,7 @@ const Services = () => {
                 </li>
                 <li className="nav-item mb-2">
                   <button
-                    className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active' : ''}`}
+                    className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active px-2' : ''}`}
                     onClick={() => setActiveTab('webdev')}
                   >
                     Web Development
@@ -81,7 +81,7 @@ const Services = () => {
                 </li>
                 <li className="nav-item mb-2">
                   <button
-                    className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active' : ''}`}
+                    className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active px-2' : ''}`}
                     onClick={() => setActiveTab('cloud')}
                   >
                     Cloud Technologies
@@ -89,7 +89,7 @@ const Services = () => {
                 </li>
                 <li className="nav-item mb-2">
                   <button
-                    className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active' : ''}`}
+                    className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active px-2' : ''}`}
                     onClick={() => setActiveTab('bi')}
                   >
                     BI/ETL Tools
@@ -97,7 +97,7 @@ const Services = () => {
                 </li>
                 <li className="nav-item mb-2">
                   <button
-                    className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active' : ''}`}
+                    className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active px-2' : ''}`}
                     onClick={() => setActiveTab('databases')}
                   >
                     Databases
@@ -109,7 +109,7 @@ const Services = () => {
             <ul className="nav nav-pills d-flex d-md-none justify-content-around custom-nav-pills-mobile mb-4">
               <li className="nav-item">
                 <button
-                  className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active' : ''}`}
+                  className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active p-2' : ''}`}
                   onClick={() => setActiveTab('languages')}
                 >
                   Languages
@@ -117,7 +117,7 @@ const Services = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active' : ''}`}
+                  className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active p-2' : ''}`}
                   onClick={() => setActiveTab('webdev')}
                 >
                   Web Dev
@@ -125,7 +125,7 @@ const Services = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active' : ''}`}
+                  className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active p-2' : ''}`}
                   onClick={() => setActiveTab('cloud')}
                 >
                   Cloud
@@ -133,7 +133,7 @@ const Services = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active' : ''}`}
+                  className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active p-2' : ''}`}
                   onClick={() => setActiveTab('bi')}
                 >
                   BI/ETL
@@ -141,10 +141,10 @@ const Services = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active' : ''}`}
+                  className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active p-2' : ''}`}
                   onClick={() => setActiveTab('databases')}
                 >
-                  DBs
+                  DataBase
                 </button>
               </li>
             </ul>

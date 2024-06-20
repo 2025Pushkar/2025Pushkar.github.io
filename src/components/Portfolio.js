@@ -2,6 +2,8 @@ import React from "react";
 import projectsInfo from "../projectsInfo/projectsInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Portfolio = () => {
   const renderProjects = (category) => {
@@ -9,7 +11,7 @@ const Portfolio = () => {
       .filter((project) => project.categories === category)
       .map((a, idx) => (
         <div key={idx} className="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-          <div className="card">
+          <div className="card h-100 shadow-sm border-0">
             <img src={a.imgSrc} className="card-img-top" alt={a.desc} />
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">{a.name}</h5>
@@ -70,6 +72,11 @@ const Portfolio = () => {
         <h2 className="text-center py-4">Networking</h2>
         <div className="row justify-content-center">
           {renderProjects("Networking")}
+        </div>
+
+        <h2 className="text-center py-4">Publications</h2>
+        <div className="row justify-content-center">
+          {renderProjects("Publications")}
         </div>
       </div>
     </div>

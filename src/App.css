@@ -715,3 +715,45 @@ textarea.input.form-control {
 .icon {
   font-size: 2rem;
 }
+
+/*portfolio*/
+
+.portfolio-wrapper {
+  background-color: #f9f9f9;
+  padding-bottom: 50px;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  flex-grow: 1;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
