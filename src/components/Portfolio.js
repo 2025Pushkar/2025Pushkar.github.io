@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { RefContext } from "./RefContext";
 import projectsInfo from "../projectsInfo/projectsInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 const Portfolio = () => {
+  const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
   const renderProjects = (category) => {
     return projectsInfo
       .filter((project) => project.categories === category)
@@ -49,17 +52,22 @@ const Portfolio = () => {
           </a>
         </p>
 
-        <h2 className="text-center py-4">Web Development</h2>
-        <div className="row justify-content-center">
+        <h2 className="text-center py-4" ref={webdevRef}>Web Development</h2>
+        <div className="row justify-content-center target-div" >
           {renderProjects("Web Development")}
         </div>
 
-        <h2 className="text-center py-4">Data Analysis</h2>
+        <h2 className="text-center py-4" ref={languagesRef}>Full Stack Development</h2>
+        <div className="row justify-content-center">
+          {renderProjects("Full Stack Development")}
+        </div>
+
+        <h2 className="text-center py-4" ref={biRef}>Data Analysis</h2>
         <div className="row justify-content-center">
           {renderProjects("Data Analysis")}
         </div>
 
-        <h2 className="text-center py-4">Data Engineering</h2>
+        <h2 className="text-center py-4" ref={cloudRef}>Data Engineering</h2>
         <div className="row justify-content-center">
           {renderProjects("Data Engineering")}
         </div>

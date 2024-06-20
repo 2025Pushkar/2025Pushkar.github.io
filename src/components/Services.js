@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaCloud } from 'react-icons/fa';
-import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb } from 'react-icons/si';
+import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb, SiSinglestore } from 'react-icons/si';
 import { MdDataUsage } from 'react-icons/md';
 import { DiMaterializecss } from 'react-icons/di';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { RefContext } from './RefContext';
 
 
 const data = {
@@ -26,6 +27,8 @@ const data = {
     { name: 'AWS', icon: <SiAmazonaws className="icon" /> },
     { name: 'Azure', icon: <SiMicrosoftazure className="icon" /> },
     { name: 'GCP', icon: <FaCloud className="icon" /> },
+    { name: 'Singlestore', icon: <SiSinglestore className="icon"/> },
+    
   ],
   bi: [
     { name: 'Power BI', icon: <SiPowerbi className="icon" /> },
@@ -43,17 +46,69 @@ const data = {
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('languages');
+  const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
+
+  const handleClick = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const renderButton = () => {
+    let buttonText = '';
+    let buttonRef = null;
+    switch (activeTab) {
+      case 'languages':
+        buttonText = 'Discover my Software Development Projects';
+        buttonRef = languagesRef;
+        break;
+      case 'webdev':
+        buttonText = 'Explore my Web Development Projects';
+        buttonRef = webdevRef;
+        break;
+      case 'cloud':
+        buttonText = 'Check Out My Cloud Technology Projects';
+        buttonRef = cloudRef;
+        break;
+      case 'bi':
+        buttonText = 'Dive into My BI/ETL Projects';
+        buttonRef = biRef;
+        break;
+      case 'databases':
+        buttonText = 'Learn About My Database Projects';
+        buttonRef = biRef;
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <div className="d-flex justify-content-center mt-4">
+        <button className="btn btn-dark btn-circle" onClick={() => handleClick(buttonRef)}>
+          <span className="small">{buttonText}</span>
+        </button>
+      </div>
+    );
+  };
 
   const renderContent = (category) => {
-    return data[category].map((item, index) => (
-      <div key={index} className="col-md-6 col-lg-4 col-xl-3 col-sm-6 col-12 mb-4">
-        <div className="box">
-          <div className="circle">{item.icon}</div>
-          <h3>{item.name}</h3>
+    return (
+      <div className="row justify-content-center">
+        {data[category].map((item, index) => (
+          <div key={index} className="col-md-6 col-lg-4 col-xl-3 col-sm-6 col-12 mb-4">
+            <div className="box">
+              <div className="circle">{item.icon}</div>
+              <h3>{item.name}</h3>
+            </div>
+          </div>
+        ))}
+        <div className="w-100 d-flex justify-content-center">
+          {renderButton()}
         </div>
       </div>
-    ));
+    );
   };
+
 
   return (
     <div id="services" className="services py-5">

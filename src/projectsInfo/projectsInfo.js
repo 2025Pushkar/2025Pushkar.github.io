@@ -15,6 +15,7 @@ import bingUML from "../image/bingUML.png";
 import cloudRec from "../image/cloudRec.jpg";
 import nlp from "../image/nlp.png";
 import quantAnalysis from "../image/Qualitative analysis.png";
+import coinSorted from "../image/coinSortedMachine.png";
 
 const projectsInfo = [
   {
@@ -22,7 +23,7 @@ const projectsInfo = [
     link: "https://www.krtrimaiq.ai/services/business-intelligence/enterprise-analytics",
     desc: "Integration project",
     summary: "Integration of RosaeNLG natural language narratives with PowerBI using TypeScript",
-    summary2: "TypeScript, PowerBI, RosaeNLG",
+    summary2: "TypeScript, PowerBI, RosaeNLG, PostgreSQL",
     imgSrc: rosaenlgPowerBI,
     categories: "Data Analysis",
     type: "company",
@@ -52,7 +53,7 @@ const projectsInfo = [
     link: "https://www.krtrimaiq.ai/platforms/digital-assistants",
     desc: "Digital assistants chatbot",
     summary: "Developed digital assistants using Next.js and Gen AI",
-    summary2: "Next.JS, Open AI",
+    summary2: "Next.JS, Open AI, Python",
     imgSrc: BIChatbot,
     categories: "Web Development",
     type: "company",
@@ -62,20 +63,10 @@ const projectsInfo = [
     link: "#",
     desc: "Digital assistants chatbot",
     summary: "Developed a PnL website for a publication house with role-based authentication and user access control.",
-    summary2: "React.JS",
+    summary2: "React.JS, Bootstrap, Python, AWS Lambda, AWS S3, MongoDB",
     imgSrc: pnl,
-    categories: "Web Development",
+    categories: "Full Stack Development",
     type: "client",
-  },
-  {
-    name: "My Portfolio",
-    link: "https://portfolio-pushkar-wani.vercel.app/",
-    desc: "Personal Portfolio",
-    summary: "Built a responsive personal portfolio website showcasing my projects, skills, and experience.",
-    summary2: "React.JS, Bootstrap, Vercel",
-    imgSrc: MyPortfolio, // Ensure you have an appropriate image for your portfolio project
-    categories: "Web Development",
-    type: "company", // Assuming it's a personal project; if for a client, use "client"
   },
   {
     name: "Code Analysis and Visualization Platform",
@@ -84,6 +75,26 @@ const projectsInfo = [
     summary: "Built a full-stack app with React.js, Java Spring Boot, and ChatGPT integration at HackBU hackathon.",
     summary2: "React.JS, Bootstrap, Java Spring Boot",
     imgSrc: bingUML, // Ensure you have an appropriate image for your portfolio project
+    categories: "Full Stack Development",
+    type: "company", // Assuming it's a personal project; if for a client, use "client"
+  },
+  {
+    name: "Automated a coin sorting machine using C++",
+    link: "https://www.youtube.com/watch?v=fOZBxkVDUV8",
+    desc: "Digital assistants chatbot",
+    summary: "Automated a coin sorting machine using C++, showcasing proficiency in programming and software automation.",
+    summary2: "Embedded C++, PICE-1756H 8-bit Microcontroller",
+    imgSrc: coinSorted,
+    categories: "Full Stack Development",
+    type: "company",
+  },
+  {
+    name: "My Portfolio",
+    link: "https://portfolio-pushkar-wani.vercel.app/",
+    desc: "Personal Portfolio",
+    summary: "Built a responsive personal portfolio website showcasing my projects, skills, and experience.",
+    summary2: "React.JS, Bootstrap, Vercel",
+    imgSrc: MyPortfolio, // Ensure you have an appropriate image for your portfolio project
     categories: "Web Development",
     type: "company", // Assuming it's a personal project; if for a client, use "client"
   },
@@ -122,7 +133,7 @@ const projectsInfo = [
     link: "https://www.youtube.com/watch?v=4BJJovOhCbU",
     desc: "Diabetes prediction",
     summary: "Deployed machine learning models to contribute to data-driven solutions.",
-    summary2: "Python, Support Vector Machines, Supervised learning",
+    summary2: "Python, Support Vector Machines, Supervised learning, PostgreSQL",
     imgSrc: dp,
     categories: "Machine Learning",
     type: "company",
@@ -132,7 +143,7 @@ const projectsInfo = [
     link: "https://nbviewer.org/github/2015pushkar/EDA-on-Covid-19-Data/blob/main/Covid19-Data%20Analysis.ipynb",
     desc: "COVID-19 data analysis",
     summary: "Performed exploratory data analysis on COVID-19 datasets",
-    summary2: "Python",
+    summary2: "Python, PostgreSQL",
     imgSrc: covid19,
     categories: "Data Analysis",
     type: "company",
