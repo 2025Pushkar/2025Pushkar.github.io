@@ -5,6 +5,7 @@ import { MdDataUsage } from 'react-icons/md';
 import { DiMaterializecss } from 'react-icons/di';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const data = {
   languages: [
     { name: 'Java', icon: <FaJava className="icon" /> },
@@ -19,7 +20,7 @@ const data = {
     { name: 'Next.JS', icon: <SiNextdotjs className="icon" /> },
     { name: 'Bootstrap', icon: <FaBootstrap className="icon" /> },
     { name: 'Material-UI', icon: <DiMaterializecss className="icon" /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="icon" /> },
+    { name: 'Tailwind', icon: <SiTailwindcss className="icon" /> },
   ],
   cloud: [
     { name: 'AWS', icon: <SiAmazonaws className="icon" /> },
@@ -29,13 +30,13 @@ const data = {
   bi: [
     { name: 'Power BI', icon: <SiPowerbi className="icon" /> },
     { name: 'Tableau', icon: <SiTableau className="icon" /> },
-    { name: 'GoodData BI', icon: <MdDataUsage className="icon" /> },
-    { name: 'ADF', icon: <SiMicrosoftazure className="icon" /> },
+    { name: 'GoodData', icon: <MdDataUsage className="icon" /> },
+    { name: 'Azure DF', icon: <SiMicrosoftazure className="icon" /> },
   ],
   databases: [
     { name: 'PostgreSQL', icon: <SiPostgresql className="icon" /> },
     { name: 'MySQL', icon: <SiMysql className="icon" /> },
-    { name: 'Azure SQL DB', icon: <SiMicrosoftaccess className="icon" /> },
+    { name: 'Azure DB', icon: <SiMicrosoftaccess className="icon" /> },
     { name: 'MongoDB', icon: <SiMongodb className="icon" /> },
   ],
 };
@@ -45,7 +46,7 @@ const Services = () => {
 
   const renderContent = (category) => {
     return data[category].map((item, index) => (
-      <div key={index} className="col-md-3 col-sm-6 col-12 mb-4">
+      <div key={index} className="col-md-6 col-lg-4 col-xl-3 col-sm-6 col-12 mb-4">
         <div className="box">
           <div className="circle">{item.icon}</div>
           <h3>{item.name}</h3>
@@ -55,29 +56,103 @@ const Services = () => {
   };
 
   return (
-    <div id="services" className="services">
-      <h1 className="py-5">Some of the technologies I use</h1>
+    <div id="services" className="services py-5">
+      <h1 className="text-center mb-5">Some of the technologies I use</h1>
       <div className="container">
-        <ul className="nav nav-tabs justify-content-center">
-          <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'languages' ? 'active' : ''}`} onClick={() => setActiveTab('languages')}>Programming Languages</button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'webdev' ? 'active' : ''}`} onClick={() => setActiveTab('webdev')}>Web Development</button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'cloud' ? 'active' : ''}`} onClick={() => setActiveTab('cloud')}>Cloud Technologies</button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'bi' ? 'active' : ''}`} onClick={() => setActiveTab('bi')}>BI/ETL Tools</button>
-          </li>
-          <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'databases' ? 'active' : ''}`} onClick={() => setActiveTab('databases')}>Databases</button>
-          </li>
-        </ul>
-        <div className="py-4">
-          <div className="row d-flex justify-content-around">
-            {renderContent(activeTab)}
+        <div className="row">
+          <div className="col-lg-3 col-md-4 col-sm-12 mb-4">
+            <div className="d-none d-md-block">
+              <ul className="nav flex-column custom-nav-pills">
+                <li className="nav-item mb-2">
+                  <button
+                    className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('languages')}
+                  >
+                    Programming Languages
+                  </button>
+                </li>
+                <li className="nav-item mb-2">
+                  <button
+                    className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('webdev')}
+                  >
+                    Web Development
+                  </button>
+                </li>
+                <li className="nav-item mb-2">
+                  <button
+                    className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('cloud')}
+                  >
+                    Cloud Technologies
+                  </button>
+                </li>
+                <li className="nav-item mb-2">
+                  <button
+                    className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('bi')}
+                  >
+                    BI/ETL Tools
+                  </button>
+                </li>
+                <li className="nav-item mb-2">
+                  <button
+                    className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('databases')}
+                  >
+                    Databases
+                  </button>
+                </li>
+              </ul>
+            </div>
+            {/* Horizontal tabs for mobile view */}
+            <ul className="nav nav-pills d-flex d-md-none justify-content-around custom-nav-pills-mobile mb-4">
+              <li className="nav-item">
+                <button
+                  className={`btn btn-light btn-circle ${activeTab === 'languages' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('languages')}
+                >
+                  Languages
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`btn btn-light btn-circle ${activeTab === 'webdev' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('webdev')}
+                >
+                  Web Dev
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`btn btn-light btn-circle ${activeTab === 'cloud' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('cloud')}
+                >
+                  Cloud
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`btn btn-light btn-circle ${activeTab === 'bi' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('bi')}
+                >
+                  BI/ETL
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`btn btn-light btn-circle ${activeTab === 'databases' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('databases')}
+                >
+                  DBs
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-9 col-md-8 col-sm-12">
+            <div className="row">
+              {renderContent(activeTab)}
+            </div>
           </div>
         </div>
       </div>
