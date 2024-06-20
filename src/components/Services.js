@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaCloud } from 'react-icons/fa';
 import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb, SiSinglestore } from 'react-icons/si';
 import { MdDataUsage } from 'react-icons/md';
 import { DiMaterializecss } from 'react-icons/di';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RefContext } from './RefContext';
+import { BackButtonContext } from './BackButtonContext';
 
 
 const data = {
@@ -27,8 +28,8 @@ const data = {
     { name: 'AWS', icon: <SiAmazonaws className="icon" /> },
     { name: 'Azure', icon: <SiMicrosoftazure className="icon" /> },
     { name: 'GCP', icon: <FaCloud className="icon" /> },
-    { name: 'Singlestore', icon: <SiSinglestore className="icon"/> },
-    
+    { name: 'Singlestore', icon: <SiSinglestore className="icon" /> },
+
   ],
   bi: [
     { name: 'Power BI', icon: <SiPowerbi className="icon" /> },
@@ -47,10 +48,36 @@ const data = {
 const Services = () => {
   const [activeTab, setActiveTab] = useState('languages');
   const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
+  const { setShowBackButton } = useContext(BackButtonContext);
+  const servicesRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = servicesRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowBackButton(false);
+        }
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [setShowBackButton]);
+
 
   const handleClick = (ref) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
+      setShowBackButton(true);
     }
   };
 
@@ -111,8 +138,8 @@ const Services = () => {
 
 
   return (
-    <div id="services" className="services py-5">
-      <h1 className="text-center mb-5">Some of the technologies I use</h1>
+    <div id="services" className="services py-5" ref={servicesRef}>
+      <h1 className="text-center mb-5">Technical Skills</h1>
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-4 col-sm-12 mb-4">

@@ -757,3 +757,40 @@ textarea.input.form-control {
   background-color: #0056b3;
   transform: scale(1.05);
 }
+
+/* back button */
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: auto;       /* Set the width */
+  height: auto;      /* Set the height to the same value as the width */
+  border-radius: 50%; /* Make it a perfect circle */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background-color: #343a40; /* Ensure the background color matches your theme */
+  color: #ffffff; /* Ensure the text color is readable */
+  font-size: 30px; /* Adjust the font size as needed */
+  transition: transform 0.3s;
+  animation: fadeIn 0.5s;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
+.back-icon {
+  font-size: 20px; /* Adjust the icon size */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
