@@ -36,7 +36,7 @@ const Experience = () => {
                   <em>PES Institute of Technology, Bangalore, India</em>
                 </p>
                 <ul>
-                  <li>Cumulative GPA: 3.09/4.00</li>
+                  <li>Cumulative GPA: 3.27/4.00</li>
                   <li>Relevant Coursework: Data Structures and Algorithms, Computer Networks, Object-Oriented Programming using C++, Python Programming.</li>
                 </ul>
               </div>
@@ -59,9 +59,9 @@ const Experience = () => {
                 <ul>
                   <li>Developed Business Intelligence solutions and Digital Assistants using Next.JS.</li>
                   <li>Built the company’s website from scratch using Next.js, implementing SEO best practices and integrating Google Analytics.</li>
-                  <li>Specialized in React.JS for effective data visualization using open-source Business Intelligence tools like Power BI and GoodData BI.</li>
+                  <li>Specialized in React.JS for effective data visualization and Python for data handling and analysis.</li>
                   <li>Handled data with Python for analysis and building in-house authentication modules for proprietary products.</li>
-                  <li>Managed ETL processes in Azure Data Factory, implementing best practices and handling slowly changing dimensions and change data capture.</li>
+                  <li>Managed ETL processes in Azure Data Factory, ensuring best practices and data integrity.</li>
                 </ul>
               </div>
             </div>
@@ -75,13 +75,28 @@ const Experience = () => {
                   <em>Alvaria INC</em>
                 </p>
                 <ul>
-                  <li>Worked with Workforce Management System and cloud-based web services.</li>
-                  <li>Analyzed customer data using complex SQL and NoSQL scripts in traditional DBMS environments.</li>
+                  <li>Worked on Workforce Management Systems and cloud-based web services.</li>
+                  <li>Wrote complex SQL and NoSQL scripts for data analysis in traditional DBMS environments.</li>
                 </ul>
               </div>
             </div>
 
             <div className="col-md-6 offset-md-6 timeline-block timeline-block-right">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">MAR 2021 - APR 2021</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">
+                  Software Developer Intern</span><br />
+                  <em>Spookfish Innovations</em>
+                </p>
+                <ul>
+                  <li>Automated a coin sorting machine using C++, showcasing proficiency in programming and software automation.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-6 timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
                 <h3 className="font-weight-bold text-dark">MAR 2021 - APR 2021</h3>

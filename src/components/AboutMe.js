@@ -62,7 +62,7 @@ const AboutMe = () => {
                     </span>
                   </a>{" "}
                   with a cumulative GPA of{" "}
-                  <span className="text-primary font-mono">7.72/10</span>.
+                  <span className="text-primary font-mono">3.27/4.00</span>.
                 </p>
 
                 <p className="text-muted font-mono">

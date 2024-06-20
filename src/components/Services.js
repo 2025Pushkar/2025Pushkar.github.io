@@ -1,198 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaCloud } from 'react-icons/fa';
 import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb } from 'react-icons/si';
-import { MdDataUsage } from 'react-icons/md'; // Using generic icons for MATLAB and GoodData
+import { MdDataUsage } from 'react-icons/md';
 import { DiMaterializecss } from 'react-icons/di';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const data = {
+  languages: [
+    { name: 'Java', icon: <FaJava className="icon" /> },
+    { name: 'Python', icon: <FaPython className="icon" /> },
+    { name: 'C++', icon: <SiCplusplus className="icon" /> },
+    { name: 'JavaScript', icon: <SiJavascript className="icon" /> },
+  ],
+  webdev: [
+    { name: 'HTML5', icon: <FaHtml5 className="icon" /> },
+    { name: 'CSS3', icon: <FaCss3Alt className="icon" /> },
+    { name: 'React.JS', icon: <FaReact className="icon" /> },
+    { name: 'Next.JS', icon: <SiNextdotjs className="icon" /> },
+    { name: 'Bootstrap', icon: <FaBootstrap className="icon" /> },
+    { name: 'Material-UI', icon: <DiMaterializecss className="icon" /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="icon" /> },
+  ],
+  cloud: [
+    { name: 'AWS', icon: <SiAmazonaws className="icon" /> },
+    { name: 'Azure', icon: <SiMicrosoftazure className="icon" /> },
+    { name: 'GCP', icon: <FaCloud className="icon" /> },
+  ],
+  bi: [
+    { name: 'Power BI', icon: <SiPowerbi className="icon" /> },
+    { name: 'Tableau', icon: <SiTableau className="icon" /> },
+    { name: 'GoodData BI', icon: <MdDataUsage className="icon" /> },
+    { name: 'ADF', icon: <SiMicrosoftazure className="icon" /> },
+  ],
+  databases: [
+    { name: 'PostgreSQL', icon: <SiPostgresql className="icon" /> },
+    { name: 'MySQL', icon: <SiMysql className="icon" /> },
+    { name: 'Azure SQL DB', icon: <SiMicrosoftaccess className="icon" /> },
+    { name: 'MongoDB', icon: <SiMongodb className="icon" /> },
+  ],
+};
 
 const Services = () => {
+  const [activeTab, setActiveTab] = useState('languages');
+
+  const renderContent = (category) => {
+    return data[category].map((item, index) => (
+      <div key={index} className="col-md-3 col-sm-6 col-12 mb-4">
+        <div className="box">
+          <div className="circle">{item.icon}</div>
+          <h3>{item.name}</h3>
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <div id="services" className="services">
       <h1 className="py-5">Some of the technologies I use</h1>
       <div className="container">
-
-        {/* Programming Languages */}
-        <h2>Programming Languages</h2>
-        <div className="row d-flex justify-content-around">
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaJava className="icon" /></div>
-              <h3>Java</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaPython className="icon" /></div>
-              <h3>Python</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiCplusplus className="icon" /></div>
-              <h3>C++</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiJavascript className="icon" /></div>
-              <h3>JavaScript</h3>
-            </div>
+        <ul className="nav nav-tabs justify-content-center">
+          <li className="nav-item">
+            <button className={`nav-link ${activeTab === 'languages' ? 'active' : ''}`} onClick={() => setActiveTab('languages')}>Programming Languages</button>
+          </li>
+          <li className="nav-item">
+            <button className={`nav-link ${activeTab === 'webdev' ? 'active' : ''}`} onClick={() => setActiveTab('webdev')}>Web Development</button>
+          </li>
+          <li className="nav-item">
+            <button className={`nav-link ${activeTab === 'cloud' ? 'active' : ''}`} onClick={() => setActiveTab('cloud')}>Cloud Technologies</button>
+          </li>
+          <li className="nav-item">
+            <button className={`nav-link ${activeTab === 'bi' ? 'active' : ''}`} onClick={() => setActiveTab('bi')}>BI/ETL Tools</button>
+          </li>
+          <li className="nav-item">
+            <button className={`nav-link ${activeTab === 'databases' ? 'active' : ''}`} onClick={() => setActiveTab('databases')}>Databases</button>
+          </li>
+        </ul>
+        <div className="py-4">
+          <div className="row d-flex justify-content-around">
+            {renderContent(activeTab)}
           </div>
         </div>
-
-        {/* Web Development */}
-        <h2 className='pt-3'>Web Development</h2>
-        <div className="row d-flex justify-content-around">
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaHtml5 className="icon" /></div>
-              <h3>HTML5</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaCss3Alt className="icon" /></div>
-              <h3>CSS3</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaReact className="icon" /></div>
-              <h3>React.JS</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiNextdotjs className="icon" /></div>
-              <h3>Next.JS</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><FaBootstrap className="icon" /></div>
-              <h3>Bootstrap</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><DiMaterializecss className="icon" /></div>
-              <h3>Material-UI</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiTailwindcss className="icon" /></div>
-              <h3>Tailwind CSS</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Cloud Technologies */}
-        <h2 className='pt-3'>Cloud Technologies</h2>
-        <div className="row d-flex justify-content-around">
-          <div className="col-md-3 col-sm-6 col-12 mb-4">
-            <div className="box">
-              <div className="circle"><SiAmazonaws className="icon" /></div>
-              <h3>AWS</h3>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-6 col-12 mb-4">
-            <div className="box">
-              <div className="circle"><SiMicrosoftazure className="icon" /></div>
-              <h3>Azure</h3>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-6 col-12 mb-4">
-            <div className="box">
-              <div className="circle"><FaCloud className="icon" /></div>
-              <h3>GCP</h3>
-            </div>
-          </div>
-        </div>
-
-
-
-        {/* BI/ETL Tools */}
-        <h2 className='pt-3'>Business Intelligence & ETL Tools</h2>
-        <div className="row d-flex justify-content-around">
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiPowerbi className="icon" /></div>
-              <h3>Power BI</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiTableau className="icon" /></div>
-              <h3>Tableau</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><MdDataUsage className="icon" /></div>
-              <h3>GoodData BI</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiMicrosoftazure className="icon" /></div>
-              <h3>ADF</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Databases */}
-        <h2 className='pt-3'>Databases</h2>
-        <div className="row d-flex justify-content-around">
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiPostgresql className="icon" /></div>
-              <h3>PostgreSQL</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiMysql className="icon" /></div>
-              <h3>MySQL</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiMicrosoftaccess className="icon" /></div>
-              <h3>Azure SQL DB</h3>
-            </div>
-          </div>
-
-          <div className="col-md-3 col-sm-6">
-            <div className="box">
-              <div className="circle"><SiMongodb className="icon" /></div>
-              <h3>MongoDB</h3>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default Services;
