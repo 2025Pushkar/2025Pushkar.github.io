@@ -794,3 +794,19 @@ textarea.input.form-control {
     opacity: 1;
   }
 }
+
+/* onClick button naviagte */
+.btnNavigate {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  border-radius: 50%; /* Ensure it's a circle */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.btnNavigate.hovered {
+  background-color: rgb(52, 58, 64); /* Dark background color */
+  color: #f4f4f4; /* Light text color */
+}
+
+
+

@@ -50,6 +50,7 @@ const Services = () => {
   const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
   const { setShowBackButton } = useContext(BackButtonContext);
   const servicesRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const currentRef = servicesRef.current;
@@ -79,6 +80,14 @@ const Services = () => {
       ref.current.scrollIntoView({ behavior: 'smooth' });
       setShowBackButton(true);
     }
+  };
+  
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   const renderButton = () => {
@@ -111,7 +120,7 @@ const Services = () => {
 
     return (
       <div className="d-flex justify-content-center mt-4">
-        <button className="btn btn-dark btn-circle" onClick={() => handleClick(buttonRef)}>
+        <button className={`btn btn-dark btn-circle ${isHovered ? 'hovered' : ''}`} onClick={() => handleClick(buttonRef)} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <span className="small">{buttonText}</span>
         </button>
       </div>
