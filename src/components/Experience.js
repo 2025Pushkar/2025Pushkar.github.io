@@ -48,6 +48,19 @@ const Experience = () => {
         <h2 className="text-center mb-4 font-weight-bold text-dark">Professional Experience</h2>
         <div className="timeline experience-wrapper mb-4">
           <div className="row">
+             <div className="col-md-6 timeline-block timeline-block-left">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3 className="font-weight-bold text-dark">AUG 2024 - PRESENT</h3>
+                <p>
+                  <span className="font-weight-bold text-dark">Software Web Developer Graduate Intern</span><br />
+                  <em>Binghamton University - Watson Career and Alumni Connections Office</em>
+                </p>
+                <ul>
+                  <li>Building a micro internship website for the university, using Next.js and PostgreSQL DB.</li>
+                </ul>
+              </div>
+            </div>
             <div className="col-md-6 offset-md-6 timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
