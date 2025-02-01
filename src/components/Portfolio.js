@@ -34,6 +34,10 @@ const Portfolio = () => {
                 <a href={a.link} target="_blank" rel="noreferrer" className="btn btn-dark btn-circle mt-auto">
                   Visit <FontAwesomeIcon icon={faExternalLinkAlt} />
                 </a>
+              ) : a.type === "In-progress" ? (
+                <button className="btn btn-secondary btn-circle mt-auto" disabled>
+                  In Progress
+                </button>
               ) : (
                 <button className="btn btn-dark btn-circle mt-auto" disabled>
                   Client Project
@@ -94,24 +98,21 @@ const Portfolio = () => {
           </a>
         </p>
 
-        <h2 className="text-center py-4" ref={webdevRef}>Web Development</h2>
-        <div className="row justify-content-center target-div" >
-          {renderProjects("Web Development")}
-        </div>
-
-        <h2 className="text-center py-4" ref={languagesRef}>Full Stack Development</h2>
+        <h2 className="text-center py-4" ref={(el) => {
+          languagesRef.current = el;
+          webdevRef.current = el;
+        }}>Full Stack Development</h2>
         <div className="row justify-content-center">
           {renderProjects("Full Stack Development")}
         </div>
 
-        <h2 className="text-center py-4" ref={biRef}>Data Analysis</h2>
+        <h2 className="text-center py-4" ref={(el) => {
+          cloudRef.current = el;
+          biRef.current = el;
+          databasesRef.current = el;
+        }}>Data Engineering & Data Analytics</h2>
         <div className="row justify-content-center">
-          {renderProjects("Data Analysis")}
-        </div>
-
-        <h2 className="text-center py-4" ref={cloudRef}>Data Engineering</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Data Engineering")}
+          {renderProjects("Data Engineering & Data Analytics")}
         </div>
 
         <h2 className="text-center py-4">Machine Learning</h2>
@@ -119,9 +120,14 @@ const Portfolio = () => {
           {renderProjects("Machine Learning")}
         </div>
 
-        <h2 className="text-center py-4">Networking</h2>
+        <h2 className="text-center py-4">Computer Networks</h2>
         <div className="row justify-content-center">
-          {renderProjects("Networking")}
+          {renderProjects("Computer Networks")}
+        </div>
+
+        <h2 className="text-center py-4">Embedded Systems</h2>
+        <div className="row justify-content-center">
+          {renderProjects("Embedded Systems")}
         </div>
 
         <h2 className="text-center py-4">Publications</h2>
@@ -130,10 +136,10 @@ const Portfolio = () => {
         </div>
       </div>
       {showBackButton && (
-        <div onClick={handleBackButtonClick} 
-        onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ ...styles.circle, ...(isHovered ? styles.circleHover : {}) }}>
+        <div onClick={handleBackButtonClick}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ ...styles.circle, ...(isHovered ? styles.circleHover : {}) }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

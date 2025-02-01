@@ -42,7 +42,7 @@ const AboutMe = () => {
                   </span> at{" "}
                   <a href="https://www.binghamton.edu/" className="text-link" target="_blank" rel="noreferrer">
                     <span className="text-primary font-mono">
-                      Binghamton University, NY
+                      SUNY Binghamton University, NY
                     </span>
                   </a>{" "}
                   with a cumulative GPA of{" "}

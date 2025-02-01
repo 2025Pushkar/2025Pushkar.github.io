@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="d-flex">
-              <p>Binghamton, NY, USA</p>
+              <p>SUNY Binghamton, NY, USA</p>
             </div>
             <div className="d-flex">
               <a href="tel:+16072979920">+1 (607) 297-9920</a>
@@ -38,7 +38,7 @@ const Footer = () => {
                 <br />
                 <Link smooth={true} to="portfolio" className="footer-nav">Portfolio</Link>
                 <br />
-                {/*<Link smooth={true} to="contact" className="footer-nav">Contact me</Link>*/}
+                <Link smooth={true} to="certifications" className="footer-nav">Achievements</Link>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
               />
               <FaInstagram
                 size={36}
-                onClick={() => handleIconClick('https://www.instagram.com/pushkar_wani_2000/?hl=en')}
+                onClick={() => handleIconClick('https://www.instagram.com/pushkar051100/')}
                 style={{ cursor: 'pointer', color: '#E1306C', margin: '0 10px' }}
               />
             </div>

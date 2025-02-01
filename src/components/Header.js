@@ -53,8 +53,8 @@ function Header() {
                 onClick={handleDownload}
                 className="btn btn-outline-primary resume-button"
                 style={{
-                  borderColor: "rgb(0, 123, 255)",
-                  color: "rgb(0, 123, 255)",
+                  borderColor: "rgb(33, 37, 41)",
+                  color: "rgb(33, 37, 41)",
                   backgroundColor: "transparent",
                 }}
               >
