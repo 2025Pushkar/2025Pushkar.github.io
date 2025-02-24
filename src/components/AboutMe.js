@@ -18,20 +18,17 @@ const AboutMe = () => {
                   <i className="ri-play-line"></i>
                   Hi, I'm{" "}
                   <span className="text-primary font-mono">
-                    Pushkar Pramod Wani, a tech enthusiast
-                  </span>.{" "}
-                  I create versatile software solutions that combine cutting-edge technology with practical functionality.
+                    Pushkar Pramod Wani
+                  </span>, a software developer passionate about building scalable and efficient applications. I specialize in{" "}
+                  <span className="text-primary font-mono">
+                    Next.js, React.js, TypeScript, and Python
+                  </span>, developing full-stack solutions from the ground up.
                 </p>
 
                 <p className="text-muted font-mono">
                   <i className="ri-play-line"></i>
-                  I have a deep passion for{" "}
-                  <span className="text-primary font-mono">
-                    Data Science and Software Development
-                  </span>. I believe that a{" "}
-                  <span className="text-primary font-mono">
-                    great data scientist is also a fantastic software developer
-                  </span>.
+                  I actively contribute to impactful projects, including leading the development of an in-house job search platform for SUNY Binghamton students, where I designed and implemented a full-stack solution using{" "}
+                  <span className="text-primary font-mono">Next.js and TypeScript</span>.
                 </p>
 
                 <p className="text-muted font-mono">
@@ -44,58 +41,33 @@ const AboutMe = () => {
                     <span className="text-primary font-mono">
                       SUNY Binghamton University, NY
                     </span>
-                  </a>{" "}
-                  with a cumulative GPA of{" "}
-                  <span className="text-primary font-mono">3.76/4.00</span>.
+                  </a> with a cumulative GPA of{" "}
+                  <span className="text-primary font-mono">3.8/4.0</span>.
                 </p>
 
                 <p className="text-muted font-mono">
                   <i className="ri-play-line"></i>
-                  I'm from{" "}
-                  <span className="text-primary font-mono">Bangalore, India</span>, where I earned my{" "}
-                  <span className="text-primary font-mono">
-                    Bachelor's degree in Electronics and Communication
-                  </span> from{" "}
-                  <a href="https://pes.edu/" className="text-link" target="_blank" rel="noreferrer">
-                    <span className="text-primary font-mono">
-                      PES Institute of Technology
-                    </span>
-                  </a>{" "}
-                  with a cumulative GPA of{" "}
-                  <span className="text-primary font-mono">3.27/4.00</span>.
-                </p>
-
-                <p className="text-muted font-mono">
-                  <i className="ri-play-line"></i>
-                  I have extensive experience in{" "}
-                  <span className="text-primary font-mono">
-                    software development and data engineering
-                  </span>. I worked as a{" "}
+                  Previously, I was a key developer at{" "}
                   <a href="https://www.krtrimaiq.ai/" className="text-link" target="_blank" rel="noreferrer">
                     <span className="text-primary font-mono">
-                      Data Engineer at KrtrimaIQ Cognitive Solutions
+                      KrtrimaIQ Cognitive Solutions
                     </span>
-                  </a> and as an{" "}
-                  <a href="https://www.alvaria.com/" className="text-link" target="_blank" rel="noreferrer">
-                    <span className="text-primary font-mono">
-                      Implementation Consultant at Alvaria INC
-                    </span>
-                  </a>.
+                  </a>, where I contributed to the development of AI-driven applications in a fast-paced startup environment.
                 </p>
 
                 <p className="text-muted font-mono">
                   <i className="ri-play-line"></i>
                   My technical skills include{" "}
                   <span className="text-primary font-mono">
-                    Java, Python, C++, JavaScript, React.JS, Next.JS, Power BI, Tableau, GoodData BI, Azure Data Factory, PostgreSQL, Azure SQL Database, MySQL and MongoDB                  </span>.
+                    JavaScript/TypeScript, React.js, Next.js, Node.js, Python, PostgreSQL, and MongoDB
+                  </span>. I also have hands-on experience with{" "}
+                  <span className="text-primary font-mono">Microsoft Azure</span> and{" "}
+                  <span className="text-primary font-mono">AWS</span> for hosting and scaling applications.
                 </p>
 
                 <p className="text-muted font-mono">
                   <i className="ri-play-line"></i>
-                  I also served as the{" "}
-                  <span className="text-primary font-mono">
-                    Publicity Head for the IEEE Solid States and Photonics Society
-                  </span> during my undergraduate studies at PES Institute of Technology, where I developed and executed marketing strategies and organized events.
+                  I thrive in startup environments where innovation and problem-solving take center stage. My goal is to leverage technology to build impactful products while continuously expanding my expertise in software engineering and cloud computing.
                 </p>
               </div>
             </div>

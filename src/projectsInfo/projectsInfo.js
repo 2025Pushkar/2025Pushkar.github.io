@@ -18,7 +18,7 @@ import quantAnalysis from "../image/Qualitative analysis.png";
 import coinSorted from "../image/coinSortedMachine.png";
 import watsontechtalent from "../image/watsontechtalent.png"
 import MLProcess from "../image/MLProcess.png"
-
+import todos from "../image/todos.png"
 const projectsInfo = [
   // Full Stack Development
   {
@@ -36,7 +36,7 @@ const projectsInfo = [
     name: "KrtrimaIQ Company Website",
     link: "https://www.krtrimaiq.ai/",
     desc: "Official website development",
-    summary: "Developed the company’s website with a focus on performance, SEO optimization, and responsiveness.",
+    summary: "Played a key role in developing the company’s website, ensuring high performance, SEO optimization, and responsiveness.",
     summary2: "Next.js, Python, AWS Lambda, AWS S3, MongoDB",
     imgSrc: krtrimaIQ,
     categories: "Full Stack Development",
@@ -51,6 +51,16 @@ const projectsInfo = [
     imgSrc: BIChatbot,
     categories: "Full Stack Development",
     type: "company",
+  },
+  {
+    "name": "Task Management Application",
+    "link": "https://github.com/2025Pushkar/lumaa-spring-2025-swe",
+    "desc": "A full-stack application for managing tasks with secure user authentication and comprehensive CRUD functionality.",
+    "summary": "Built with Node.js, Express, PostgreSQL, React, and TypeScript, this app features JWT-based authentication and robust task management capabilities.",
+    "summary2": "Node.js, Express, PostgreSQL, Sequelize ORM, bcrypt, JWT, Zod, dotenv, React, TypeScript, React-Bootstrap, React Router, Context API",
+    "imgSrc": todos,
+    "categories": "Full Stack Development",
+    "type": "company"
   },
   {
     name: "Code Analysis and Visualization Platform",
