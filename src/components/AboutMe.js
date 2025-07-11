@@ -104,7 +104,7 @@ const AboutMe = () => {
                   <FaInstagram
                     size={24}
                     className="icon"
-                    onClick={() => handleIconClick('https://www.instagram.com/pushkar051100/')}
+                    onClick={() => handleIconClick('https://www.instagram.com/pushkar_4o4/')}
                     style={{ cursor: 'pointer', color: '#E1306C' }}
                   />
                   <SiGeeksforgeeks

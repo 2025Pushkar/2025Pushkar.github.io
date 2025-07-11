@@ -66,7 +66,7 @@ const Footer = () => {
               />
               <FaInstagram
                 size={36}
-                onClick={() => handleIconClick('https://www.instagram.com/pushkar051100/')}
+                onClick={() => handleIconClick('https://www.instagram.com/pushkar_4o4/')}
                 style={{ cursor: 'pointer', color: '#E1306C', margin: '0 10px' }}
               />
             </div>
