@@ -1,6 +1,8 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaBootstrap, FaCloud } from 'react-icons/fa';
-import { SiCplusplus, SiJavascript, SiNextdotjs, SiMicrosoftaccess, SiPostgresql, SiMysql, SiPowerbi, SiTableau, SiMicrosoftazure, SiTailwindcss, SiAmazonaws, SiMongodb, SiSinglestore } from 'react-icons/si';
+import { SiCplusplus, SiJavascript, SiNextdotjs, SiPostgresql, SiMysql, SiTableau, SiTailwindcss, SiMongodb, SiSinglestore } from 'react-icons/si';
+import { FaAws } from "react-icons/fa";
+import { VscAzure } from "react-icons/vsc";
 import { MdDataUsage } from 'react-icons/md';
 import { DiMaterializecss } from 'react-icons/di';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,22 +27,22 @@ const data = {
     { name: 'Tailwind', icon: <SiTailwindcss className="icon" /> },
   ],
   cloud: [
-    { name: 'AWS', icon: <SiAmazonaws className="icon" /> },
-    { name: 'Azure', icon: <SiMicrosoftazure className="icon" /> },
+    { name: 'AWS', icon: <FaAws className="icon" /> },
+    { name: 'Azure', icon: <VscAzure className="icon" /> },
     { name: 'GCP', icon: <FaCloud className="icon" /> },
     { name: 'Singlestore', icon: <SiSinglestore className="icon" /> },
 
   ],
   bi: [
-    { name: 'Power BI', icon: <SiPowerbi className="icon" /> },
+    { name: 'Power BI', icon: <MdDataUsage className="icon" /> },
     { name: 'Tableau', icon: <SiTableau className="icon" /> },
     { name: 'GoodData', icon: <MdDataUsage className="icon" /> },
-    { name: 'Azure DF', icon: <SiMicrosoftazure className="icon" /> },
+    { name: 'Azure DF', icon: <VscAzure className="icon" /> },
   ],
   databases: [
     { name: 'PostgreSQL', icon: <SiPostgresql className="icon" /> },
     { name: 'MySQL', icon: <SiMysql className="icon" /> },
-    { name: 'Azure DB', icon: <SiMicrosoftaccess className="icon" /> },
+    { name: 'Azure DB', icon: <MdDataUsage className="icon" /> },
     { name: 'MongoDB', icon: <SiMongodb className="icon" /> },
   ],
 };

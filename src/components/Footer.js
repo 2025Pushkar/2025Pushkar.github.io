@@ -26,8 +26,8 @@ const Footer = () => {
           <div className="col-lg-3 col-md-2 col-sm-6">
             <div className="row">
               <div className="col">
-                <Link smooth={true} to="home" className="footer-nav">Home</Link>
-                <br />
+                {/* <Link smooth={true} to="home" className="footer-nav">Home</Link>
+                <br /> */}
                 <Link smooth={true} to="about" className="footer-nav">About me</Link>
                 <br />
                 <Link smooth={true} to="services" className="footer-nav">Technologies</Link>

@@ -574,11 +574,18 @@ textarea.input.form-control {
   object-position: center;
 }
 
-
-.resume-button:hover {
+.resume-button {
+  transition: transform 0.3s ease;
   background-color: rgb(33, 37, 41) !important;
   color: white !important;
 }
+
+.resume-button:hover {
+  transform: scale(1.1); /* Enlarge on hover */
+  background-color: rgb(33, 37, 41) !important;
+  color: white !important;
+}
+
 
 /* styles.css */
 .open-to-work-wrapper {
@@ -611,7 +618,7 @@ textarea.input.form-control {
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: right;
-  background: rgba(0, 128, 0, 0.8);
+  background: #343a40;
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
@@ -628,7 +635,7 @@ textarea.input.form-control {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 10px solid rgba(0, 128, 0, 0.8);
+  border: 10px solid #343a40;
   border-radius: 50%;
   box-sizing: border-box;
 }
@@ -851,6 +858,63 @@ textarea.input.form-control {
   color: #333;
   text-align: center;
 }
+
+/* AboutMe.css */
+.open-to-work-wrapper {
+  position: relative;
+  width: 350px;  /* should match your wrapper’s width */
+  height: 350px; /* and height */
+}
+
+.open-to-work-wrapper .icon-semicircle {
+  position: absolute;
+  inset: 0;              /* top:0; right:0; bottom:0; left:0; */
+  pointer-events: none;  /* pass clicks to the wrappers */
+}
+
+.open-to-work-wrapper .icon-semicircle .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  pointer-events: auto;  /* allow clicks/hover */
+}
+
+/* counter-clockwise from 0° (east) to -90° (north) */
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(1) {
+  transform: rotate(   0deg) translate(185px) rotate(   0deg);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(2) {
+  transform: rotate( -22.5deg) translate(195px) rotate( 22.5deg);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(3) {
+  transform: rotate( -45deg) translate(200px) rotate( 45deg);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(4) {
+  transform: rotate( -67.5deg) translate(205px) rotate( 67.5deg);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(5) {
+  transform: rotate(-90deg) translate(210px) rotate( 90deg);
+}
+
+/* hover: re-apply each child’s transform plus scale */
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(1):hover {
+  transform: rotate(   0deg) translate(185px) rotate(   0deg) scale(1.3);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(2):hover {
+  transform: rotate( -22.5deg) translate(195px) rotate( 22.5deg) scale(1.3);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(3):hover {
+  transform: rotate( -45deg) translate(200px) rotate( 45deg) scale(1.3);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(4):hover {
+  transform: rotate( -67.5deg) translate(205px) rotate( 67.5deg) scale(1.3);
+}
+.open-to-work-wrapper .icon-semicircle .icon:nth-child(5):hover {
+  transform: rotate(-90deg) translate(210px) rotate( 90deg) scale(1.3);
+}
+
 
 
 
