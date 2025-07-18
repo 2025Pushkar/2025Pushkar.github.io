@@ -11,6 +11,9 @@ import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import AwardsCertifications from "./components/AwardsCertification";
 // import AboutPage from "./components/AboutPage";
+import FeaturedProjects from "./components/FeaturedProjects";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
           <Navbar />
           {/* <Header /> */}
           <AboutMe />
+          <FeaturedProjects />
           <Services />
           <Experience />
           <Portfolio /> 

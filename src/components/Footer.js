@@ -30,6 +30,8 @@ const Footer = () => {
                 <br /> */}
                 <Link smooth={true} to="about" className="footer-nav">About me</Link>
                 <br />
+                <Link smooth={true} to="featuredProjects" className="footer-nav">Featured Projects</Link>
+                <br />
                 <Link smooth={true} to="services" className="footer-nav">Technologies</Link>
                 <br />
               </div>

@@ -19,7 +19,12 @@ import coinSorted from "../image/coinSortedMachine.png";
 import watsontechtalent from "../image/watsontechtalent.png"
 import MLProcess from "../image/MLProcess.png"
 import todos from "../image/todos.png"
-const projectsInfo = [
+import semantic_bi_chatbot from "../image/semantic_bi_chatbot.png";
+import system_architecture_etl_aurora from "../image/system_architecture_etl_aurora.png";
+import system_architecture_airflow_spark_dynamodb from "../image/system_architecture_airflow_spark_dynamodb.png";
+import AWS_Ecosystem_Batch_Ingestion_and_Orchestration from "../image/AWS_Ecosystem_Batch_Ingestion_and_Orchestration.png";
+
+export const projectsInfo = [
   // Full Stack Development
   {
     name: "Watson Tech Talent Microinternships Platform",
@@ -234,4 +239,81 @@ const projectsInfo = [
   },
 ];
 
-export default projectsInfo;
+export const featuredProjects =  [
+  /* ────────────── Customer-facing & Gen-AI work ────────────── */
+  {
+    title: "KrtrimaIQ Company Website",
+    slug: "krtrimaiq-company-website",
+    cover: krtrimaIQ,
+    tagline:
+      "Built a Next.js marketing site with sub-1 s TTFB and SEO 95+, driving ~25 % increase in inbound demos.",
+    link: "https://krtrimaiq.ai",
+    techStack: ["Next.js", "Python", "AWS Lambda", "AWS S3", "MongoDB"],
+    type: "company"
+  },
+  {
+    title: "Watson Tech Talent Micro-internships",
+    slug: "watson-tech-talent-microinternships",
+    cover: watsontechtalent,
+    tagline:
+      "Full-stack platform matching SUNY CS students with faculty projects; OAuth2 SSO, PostgreSQL, Docker CI/CD.",
+    link: null,
+    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Docker", "OAuth2", "CI/CD"],
+    type: "In-progress"
+  },
+  {
+    title: "Semantic BI Chatbot (Regeneron)",
+    slug: "regn-semantic-bi-chatbot",
+    cover: semantic_bi_chatbot,
+    tagline:"A Snowflake Cortex–driven assistant that converts natural-language queries into KPI stories on top of the semantic layer, while also surfacing top insights and flagging anomalies directly within search results.",
+    link: null,
+    techStack: ["Snowflake", "Cortex LLM", "Snowpark Python", "Streamlit"],
+    type: "Internship"
+  },
+
+  /* ────────────── Data-engineering / AWS pipelines ────────────── */
+  {
+    title: "Rental Apartments ETL (Aurora → Redshift)",
+    slug: "etl-rental-apartments",
+    cover: system_architecture_etl_aurora,
+    tagline:
+      "Serverless six-step pipeline—Aurora MySQL → S3 → Glue Spark → Redshift—orchestrated by Step Functions; bookmarks in DynamoDB.",
+    link: "https://github.com/2015pushkar/ETL-for-Rental-apartments-using-Step-functions-Aurora-AWS-Glue-and-Redshift",
+    techStack: ["Step Functions", "Aurora MySQL", "AWS Glue", "Redshift", "DynamoDB"],
+    type: "aws"
+  },
+  {
+    title: "Distributed Music Streams Processing",
+    slug: "distributed-streams-processing",
+    cover: system_architecture_airflow_spark_dynamodb,
+    tagline:
+      "Micro-batch ‘stream-like’ analytics: Airflow DAG every 5 min → Glue PySpark cleanses to Parquet → DynamoDB upserts live metrics.",
+    link: "https://github.com/2015pushkar/Distributed-streams-processing-using-Airflow-Spark-Dynamodb",
+    techStack: ["Apache Airflow", "Glue PySpark", "DynamoDB", "S3"],
+    type: "aws"
+  },
+  {
+    title: "Spotify-Style Streaming ETL Pipeline",
+    slug: "spotify-streaming-etl",
+    cover: AWS_Ecosystem_Batch_Ingestion_and_Orchestration,
+    tagline:
+      "Airflow-to-Redshift batch ETL producing genre & hourly KPIs; pandas + Jupyter notebooks for exploratory insight.",
+    link: "https://github.com/2015pushkar/Batch-data-processing-of-music-streams-using-Airflow-Redshift",
+    techStack: ["Airflow", "Redshift", "S3", "Python (pandas)"],
+    type: "aws"
+  },
+
+  /* ────────────── Extra polish / UI analytics ────────────── */
+  {
+    title: "Interactive Sales Dashboard",
+    slug: "interactive-sales-dashboard",
+    cover: salesDashboard,
+    tagline:
+      "React + Chart.js 2 dashboard with live Postgres API; drill-downs and cohort filters for revenue teams.",
+    link: "https://www.krtrimaiq.ai/services/business-intelligence/react-dashboard",
+    techStack: ["React.js", "Chart.js-2", "PostgreSQL"],
+    type: "company"
+  }
+];
+
+// export default projectsInfo;
