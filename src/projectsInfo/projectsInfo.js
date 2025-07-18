@@ -246,7 +246,7 @@ export const featuredProjects =  [
     slug: "krtrimaiq-company-website",
     cover: krtrimaIQ,
     tagline:
-      "Built a Next.js marketing site with sub-1 s TTFB and SEO 95+, driving ~25 % increase in inbound demos.",
+      "Played a key role in developing the company’s website, ensuring high performance, SEO optimization, and responsiveness.",
     link: "https://krtrimaiq.ai",
     techStack: ["Next.js", "Python", "AWS Lambda", "AWS S3", "MongoDB"],
     type: "company"
@@ -256,7 +256,7 @@ export const featuredProjects =  [
     slug: "watson-tech-talent-microinternships",
     cover: watsontechtalent,
     tagline:
-      "Full-stack platform matching SUNY CS students with faculty projects; OAuth2 SSO, PostgreSQL, Docker CI/CD.",
+      "Developing a scalable micro-internship platform for computer science students at SUNY Binghamton University.",
     link: null,
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Docker", "OAuth2", "CI/CD"],
     type: "In-progress"
