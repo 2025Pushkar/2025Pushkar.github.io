@@ -989,4 +989,131 @@ textarea.input.form-control {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
+/* Experience section (tabbed layout) */
+.experience-section {
+  background: #ffffff;
+}
+
+.experience-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.experience-subtitle {
+  color: #6b7280;
+  margin: 0.5rem 0 0;
+}
+
+.experience-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-tab {
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #374151;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.experience-tab:hover {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #1d4ed8;
+}
+
+.experience-tab.is-active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.18);
+}
+
+.experience-panel {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.experience-panel.is-active {
+  max-height: 3000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.experience-card-header {
+  margin-bottom: 0.9rem;
+}
+
+.experience-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.2rem;
+}
+
+.experience-card-role {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.6rem;
+}
+
+.experience-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-pill {
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.experience-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #374151;
+}
+
+.experience-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.experience-card-text {
+  color: #374151;
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .experience-title {
+    font-size: 1.75rem;
+  }
+
+  .experience-tab {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
