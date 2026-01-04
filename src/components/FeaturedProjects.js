@@ -42,7 +42,7 @@ const FeaturedProjects = () => {
   // auto‑scroll
   useEffect(() => {
     if (featuredProjects.length <= perView) return;
-    const id = setInterval(() => setCurrentIndex((i) => (i + 1) % featuredProjects.length), 4800);
+    const id = setInterval(() => setCurrentIndex((i) => (i + 1) % featuredProjects.length), 5000);
     return () => clearInterval(id);
   }, [featuredProjects.length, perView]);
 
@@ -56,67 +56,100 @@ const FeaturedProjects = () => {
     return { ...featuredProjects[idx], _isCenter: i === centerOffset };
   });
 
-  const btnBase = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    border: 'none',
-    borderRadius: '50%',
-    width: 44,
-    height: 44,
-    background: 'rgba(255,255,255,0.9)',
-    color: '#1f2937',
-    cursor: 'pointer',
-    boxShadow: '0 4px 6px -1px rgba(0,0,0,.1)',
-    zIndex: 5,
-  };
-
   const prev = () => setCurrentIndex((i) => (i - 1 + featuredProjects.length) % featuredProjects.length);
   const next = () => setCurrentIndex((i) => (i + 1) % featuredProjects.length);
 
+  const typeLabel = (p) => {
+    if (!p.type) return "Project";
+    if (p.type === "In-progress") return "In Progress";
+    if (p.type === "Internship") return "Internship";
+    if (p.type === "company") return "Company";
+    if (p.type === "aws") return "AWS Pipeline";
+    if (p.type === "client") return "Client";
+    return p.type;
+  };
+
   const renderBtn = (p) => {
-    if (p.type === 'company' && p.link) return <a href={p.link} target="_blank" rel="noreferrer" className="btn btn-dark mt-auto">Visit <FontAwesomeIcon icon={faExternalLinkAlt} /></a>;
-    if (p.type === 'In-progress') return <button className="btn btn-secondary mt-auto" disabled>In&nbsp;Progress</button>;
-    if (p.type === 'Internship') return <button className="btn btn-secondary mt-auto" disabled>In&nbsp;Progress</button>;
-    if (!p.link) return <button className="btn btn-dark mt-auto" disabled>Private&nbsp;Project</button>;
-    return <a href={p.link} target="_blank" rel="noreferrer" className="btn btn-dark mt-auto">View <FontAwesomeIcon icon={faExternalLinkAlt} /></a>;
+    if (p.type === "company" && p.link) {
+      return (
+        <a href={p.link} target="_blank" rel="noreferrer" className="featured-project-button">
+          Visit <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </a>
+      );
+    }
+    if (p.type === "In-progress") {
+      return (
+        <button className="featured-project-button is-muted" disabled>
+          In&nbsp;Progress
+        </button>
+      );
+    }
+    if (p.type === "Internship") {
+      return (
+        <button className="featured-project-button is-muted" disabled>
+          In&nbsp;Progress
+        </button>
+      );
+    }
+    if (!p.link) {
+      return (
+        <button className="featured-project-button is-muted" disabled>
+          Private&nbsp;Project
+        </button>
+      );
+    }
+    return (
+      <a href={p.link} target="_blank" rel="noreferrer" className="featured-project-button">
+        View <FontAwesomeIcon icon={faExternalLinkAlt} />
+      </a>
+    );
   };
 
   return (
-    <section id="featuredProjects" className="py-5" style={{ background: 'linear-gradient(to right,#eff6ff,#fff,#eff6ff)' }}>
+    <section id="featuredProjects" className="featured-projects-section py-5">
       <div className="container position-relative">
-        <h2 className="text-center fw-bold mb-5" style={{ fontSize: '2.6rem', color: '#1f2937' }}>Featured Projects</h2>
+        <div className="featured-projects-header text-center">
+          <h2 className="featured-projects-title">Featured Projects</h2>
+          <p className="featured-projects-subtitle">
+            Selected work that highlights product impact, engineering rigor, and system design depth.
+          </p>
+        </div>
 
-        <div className="d-flex justify-content-center align-items-stretch" style={{ gap: '1rem', overflow: 'hidden' }}>
+        <div className="featured-projects-carousel">
           {visible.map((p, i) => (
-            <div
+            <article
               key={p.slug || i}
-              className="card shadow-sm border-0 flex-shrink-0"
-              style={{
-                width: `calc(100% / ${perView} - 1rem)`,
-                transform: p._isCenter ? 'scale(1.08)' : 'scale(0.9)',
-                transition: 'transform .4s',
-              }}
+              className={`featured-project-card ${p._isCenter ? "is-center" : ""}`}
+              style={{ width: `calc(100% / ${perView} - 1rem)` }}
             >
-              <img src={p.cover} className="card-img-top" alt={p.title} style={{ height: 200, objectFit: 'cover' }} />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{p.title}</h5>
-                <p className="card-text flex-grow-1">{p.tagline}</p>
-                <div className="mb-2">
+              <div className="featured-project-image">
+                <img src={p.cover} alt={p.title} />
+                <span className="featured-project-type">{typeLabel(p)}</span>
+              </div>
+              <div className="featured-project-body">
+                <h3 className="featured-project-title">{p.title}</h3>
+                <p className="featured-project-tagline">{p.tagline}</p>
+                <div className="featured-project-tags">
                   {p.techStack.map((t, idx) => (
-                    <span key={idx} className="badge bg-dark text-white me-2 mb-1 mr-1">{t}</span>
+                    <span key={idx} className="featured-project-tag">
+                      {t}
+                    </span>
                   ))}
                 </div>
-                {renderBtn(p)}
+                <div className="featured-project-cta">{renderBtn(p)}</div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {featuredProjects.length > perView && (
           <>
-            <button style={{ ...btnBase, left: 10 }} onClick={prev}><FontAwesomeIcon icon={faChevronLeft} /></button>
-            <button style={{ ...btnBase, right: 10 }} onClick={next}><FontAwesomeIcon icon={faChevronRight} /></button>
+            <button className="featured-project-nav is-prev" onClick={prev} aria-label="Previous project">
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button className="featured-project-nav is-next" onClick={next} aria-label="Next project">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </>
         )}
       </div>
