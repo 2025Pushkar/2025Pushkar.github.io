@@ -87,7 +87,7 @@ const FeaturedProjects = () => {
     if (p.type === "Internship") {
       return (
         <button className="featured-project-button is-muted" disabled>
-          In&nbsp;Progress
+          Completed&nbsp;Internship
         </button>
       );
     }
@@ -107,7 +107,7 @@ const FeaturedProjects = () => {
 
   return (
     <section id="featuredProjects" className="featured-projects-section py-5">
-      <div className="container position-relative">
+      <div className="container-fluid px-4 px-lg-5 position-relative">
         <div className="featured-projects-header text-center">
           <h2 className="featured-projects-title">Featured Projects</h2>
           <p className="featured-projects-subtitle">

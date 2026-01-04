@@ -252,14 +252,14 @@ export const featuredProjects =  [
     type: "company"
   },
   {
-    title: "Watson Tech Talent Micro-internships",
-    slug: "watson-tech-talent-microinternships",
+    title: "Watson Tech Talent Micro-internship Platform",
+    slug: "watson-tech-talent-micro-internship-platform",
     cover: watsontechtalent,
     tagline:
-      "Developing a scalable micro-internship platform for computer science students at SUNY Binghamton University.",
+      "A scalable university wide micro internship platform connecting students with real world project experience.",
     link: null,
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Docker", "OAuth2", "CI/CD"],
-    type: "In-progress"
+    type: "Internship"
   },
   {
     title: "Semantic BI Chatbot (Regeneron)",
