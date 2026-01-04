@@ -918,4 +918,75 @@ textarea.input.form-control {
 
 
 
+/* About section overrides to keep image visible and icons inline */
+.open-to-work-wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+.open-to-work-wrapper .icon-semicircle {
+  display: none;
+}
+
+.open-to-work-badge {
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  transform: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.75rem;
+  line-height: 1.1;
+  pointer-events: none;
+  opacity: 0.95;
+  width: fit-content;
+  height: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.open-to-work-image {
+  border-radius: 18px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.open-to-work-text {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: rotate(-12deg) !important;
+  transform-origin: left top;
+  writing-mode: horizontal-tb !important;
+  background: #0f5132;
+  color: #e8f5ee;
+  padding: 4px 10px;
+  border-radius: 5px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.open-to-work-circle {
+  display: none !important;
+}
+
+.about-socials .icon {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  margin: 0 8px;
+}
+
+.about-socials .icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
 

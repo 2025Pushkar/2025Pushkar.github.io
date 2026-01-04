@@ -38,101 +38,67 @@ const AboutMe = () => {
                     </h2>
                   </div>
                   <p className="text-muted font-mono mb-2" style={{ fontSize: '1.1rem' }}>
-                    Full-Stack Developer & Data Engineer | New York, USA
+                    Software Engineer | Full Stack & Backend Systems
                   </p>
                 </div>
 
                 {/* Main Description */}
                 <p className="text-muted font-mono mb-3">
-                  I build scalable web apps, robust data pipelines, and AI-powered solutions that deliver real business impact. My expertise spans Python, JavaScript/TypeScript, React.js, Next.js, and leading cloud platforms (AWS, GCP, Azure, Snowflake).
+                  I am a Software Engineer with experience building production ready full stack and backend systems across startup and enterprise environments. My work focuses on designing APIs, authentication and authorization flows, distributed processing, and data intensive applications using Python, TypeScript, React, and Next.js, with end to end ownership from design and implementation to deployment, monitoring, and reliability.
                 </p>
 
-                {/* Experience */}
                 <p className="text-muted font-mono mb-3">
-                  Currently, I'm a Graduate Software Developer Intern at{" "}
-                  <a
-                    href="https://www.regeneron.com/"
-                    className="text-primary text-decoration-none"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Regeneron
-                  </a>, where I architected an AI-driven analytics platform that reduced query latency by 70% and automated insights for commercial teams. Previously, I led the development of AI-powered digital assistants, engineered the company website, and built scalable data pipelines at                  <a
-                    href="https://www.krtrimaiq.ai/"
-                    className="text-primary text-decoration-none"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    KrtrimaIQ
-                  </a>, and building a micro-internship platform at{" "}
-                  <a
-                    href="https://www.binghamton.edu/"
-                    className="text-primary text-decoration-none"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Binghamton University
-                  </a>.
+                  Most recently, I worked as a Graduate Software Engineer Intern at Regeneron, building backend services and REST APIs to support AI agent orchestration on governed enterprise data. Previously, I spent several years in startup environments working across frontend, backend, data pipelines, and cloud infrastructure, which trained me to move quickly, adapt to ambiguity, and ship practical solutions.
                 </p>
 
-                {/* Personal Touch */}
-                <p className="text-muted font-mono mb-4">
-                  Always eager to learn, collaborate, and solve complex challenges. Outside of coding, I enjoy hiking, exploring new tech, and experimenting with recipes.
+                <p className="text-muted font-mono mb-3">
+                  I am particularly interested in backend or full stack software engineering roles where strong engineering fundamentals, system design, and ownership matter.
                 </p>
+
+                <div className="mt-4">
+                  <p className="text-primary font-mono fw-bold mb-2">Top skills</p>
+                  <div className="d-flex flex-wrap gap-2">
+                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">Next.js</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">Python</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">SQL</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">React.js</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">JavaScript</span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="col-lg-5 col-md-12 text-center d-flex flex-column align-items-center">
-              <div className="open-to-work-wrapper mx-auto mb-3">
+              <div
+                className="open-to-work-wrapper mx-auto mb-3"
+                style={{
+                  padding: "1.25rem",
+                  maxWidth: "440px",
+                  width: "100%",
+                  background: "linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%)",
+                  boxShadow: "0 14px 36px rgba(0, 0, 0, 0.12)",
+                  borderRadius: "1.5rem",
+                  border: "1px solid #e9ecef",
+                  overflow: "hidden",
+                }}
+              >
+                <div className="open-to-work-badge">
+                  <span className="open-to-work-text">Open to work</span>
+                </div>
                 <img
                   src={author}
                   alt="Pushkar's Portrait"
-                  className="border border-muted rounded-circle open-to-work-image"
+                  className="border border-muted open-to-work-image"
                   style={{
-                    minWidth: "300px",
-                    minHeight: "300px",
-                    maxWidth: "400px",
-                    maxHeight: "400px",
+                    width: "100%",
+                    maxWidth: "380px",
+                    height: "auto",
+                    objectFit: "cover",
+                    borderRadius: "18px",
+                    display: "block",
+                    margin: "0 auto",
                   }}
                 />
-                <div className="open-to-work-badge sm-px-3">
-                  <div className="open-to-work-circle"></div>
-                  <div className="open-to-work-text">#OpenToWork</div>
-                </div>
-                <div className="icon-semicircle">
-
-                  <FaInstagram
-                    size={24}
-                    className="icon"
-                    onClick={() => handleIconClick('https://www.instagram.com/pushkar_4o4/')}
-                    style={{ cursor: 'pointer', color: '#E1306C' }}
-                  />
-                  <SiGeeksforgeeks
-                    size={24}
-                    className="icon"
-                    onClick={() => handleIconClick('https://www.geeksforgeeks.org/user/pushkarwani2015/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user')}
-                    style={{ cursor: 'pointer', color: '#28a745' }}
-                  />
-                  <SiLeetcode
-                    size={24}
-                    className="icon"
-                    onClick={() => handleIconClick('https://leetcode.com/u/pushkarwani/')}
-                    style={{ cursor: 'pointer', color: '#FFA116' }}
-                  />
-                  <FaGithub
-                    size={24}
-                    className="icon"
-                    onClick={() => handleIconClick('https://github.com/2015pushkar')}
-                    style={{ cursor: 'pointer', color: '#6c757d' }}
-                  />
-                  <FaLinkedin
-                    size={24}
-                    className="icon"
-                    onClick={() => handleIconClick('https://www.linkedin.com/in/pushkar-wani-44bb10190/')}
-                    style={{ cursor: 'pointer', color: '#0077b5' }}
-                  />
-
-                </div>
               </div>
               <button
                 onClick={handleDownload}
@@ -141,6 +107,48 @@ const AboutMe = () => {
                 <i className="ri-download-line me-2"></i>
                 Download My Resume
               </button>
+
+              <div
+                className="about-socials d-flex flex-wrap justify-content-center align-items-center gap-3 mt-3 p-3"
+                style={{
+                  background: "#f8f9fa",
+                  borderRadius: "0.75rem",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
+                  width: "100%",
+                  maxWidth: "520px",
+                }}
+              >
+                <FaLinkedin
+                  size={28}
+                  className="icon"
+                  onClick={() => handleIconClick('https://www.linkedin.com/in/pushkar-wani-44bb10190/')}
+                  style={{ cursor: 'pointer', color: '#0077b5' }}
+                />
+                <FaGithub
+                  size={28}
+                  className="icon"
+                  onClick={() => handleIconClick('https://github.com/2015pushkar')}
+                  style={{ cursor: 'pointer', color: '#6c757d' }}
+                />
+                <SiLeetcode
+                  size={28}
+                  className="icon"
+                  onClick={() => handleIconClick('https://leetcode.com/u/pushkarwani/')}
+                  style={{ cursor: 'pointer', color: '#FFA116' }}
+                />
+                <SiGeeksforgeeks
+                  size={28}
+                  className="icon"
+                  onClick={() => handleIconClick('https://www.geeksforgeeks.org/user/pushkarwani2015/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user')}
+                  style={{ cursor: 'pointer', color: '#28a745' }}
+                />
+                <FaInstagram
+                  size={28}
+                  className="icon"
+                  onClick={() => handleIconClick('https://www.instagram.com/pushkar_4o4/')}
+                  style={{ cursor: 'pointer', color: '#E1306C' }}
+                />
+              </div>
 
             </div>
 
