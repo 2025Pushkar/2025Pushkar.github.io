@@ -131,16 +131,16 @@ const Services = () => {
 
   const renderContent = (category) => {
     return (
-      <div className="row justify-content-center">
+      <div className="row g-4">
         {data[category].map((item, index) => (
-          <div key={index} className="col-md-6 col-lg-4 col-xl-3 col-sm-6 col-12 mb-4">
+          <div key={index} className="col-lg-3 col-md-6 col-sm-6 col-12">
             <div className="box">
               <div className="circle">{item.icon}</div>
               <h3>{item.name}</h3>
             </div>
           </div>
         ))}
-        <div className="w-100 d-flex justify-content-center">
+        <div className="col-12 d-flex justify-content-center">
           {renderButton()}
         </div>
       </div>

@@ -1,56 +1,156 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { RefContext } from "./RefContext";
 import { projectsInfo } from "../projectsInfo/projectsInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { faChevronLeft, faChevronRight, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { BackButtonContext } from "./BackButtonContext";
-import { MdOutlineArrowUpward } from "react-icons/md";
 
+const portfolioCategories = [
+  { id: "Distributed Systems", label: "Distributed Systems" },
+  { id: "Full Stack Development", label: "Full Stack" },
+  { id: "Data Engineering & Data Analytics", label: "Data & Analytics" },
+  { id: "Machine Learning", label: "Machine Learning" },
+  { id: "Computer Networks", label: "Networks" },
+  { id: "Embedded Systems", label: "Embedded" },
+  { id: "Publications", label: "Publications" },
+];
 
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 const Portfolio = () => {
   const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
   const { showBackButton, setShowBackButton } = useContext(BackButtonContext);
+  const [activeCategory, setActiveCategory] = useState("Full Stack Development");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [perView, setPerView] = useState(3);
+  const portfolioRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  const renderProjects = (category) => {
-    return projectsInfo
-      .filter((project) => project.categories === category)
-      .map((a, idx) => (
-        <div key={idx} className="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-          <div className="card h-100 shadow-sm border-0">
-            <img src={a.imgSrc} className="card-img-top" alt={a.desc} />
-            <div className="card-body d-flex flex-column">
-              <h5 className="card-title">{a.name}</h5>
-              <p className="card-text">{a.summary}</p>
-              <div className="mb-3">
-                {a.summary2.split(", ").map((tag, index) => (
-                  <span key={index} className="badge badge-pill badge-dark mr-1">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              {a.type === "company" ? (
-                <a href={a.link} target="_blank" rel="noreferrer" className="btn btn-dark btn-circle mt-auto">
-                  Visit <FontAwesomeIcon icon={faExternalLinkAlt} />
-                </a>
-              ) : a.type === "In-progress" ? (
-                <button className="btn btn-secondary btn-circle mt-auto" disabled>
-                  In Progress
-                </button>
-              ) : (
-                <button className="btn btn-dark btn-circle mt-auto" disabled>
-                  Client Project
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      ));
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 992) setPerView(3);
+      else if (window.innerWidth >= 768) setPerView(2);
+      else setPerView(1);
+    };
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeCategory, perView]);
+
+  useEffect(() => {
+    const currentRef = portfolioRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowBackButton(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [setShowBackButton]);
+
+  const setTabRef = (category, el) => {
+    if (category === "Full Stack Development") {
+      languagesRef.current = el;
+      webdevRef.current = el;
+    }
+    if (category === "Data Engineering & Data Analytics") {
+      cloudRef.current = el;
+      biRef.current = el;
+      databasesRef.current = el;
+    }
   };
 
+  const typeLabel = (project) => {
+    if (!project.type) return "Project";
+    if (project.type === "project") return "Project";
+    if (project.type === "In-progress") return "In Progress";
+    if (project.type === "Internship") return "Internship";
+    if (project.type === "company") return "Company";
+    if (project.type === "aws") return "AWS Pipeline";
+    if (project.type === "client") return "Client";
+    if (project.type === "personal") return "Personal";
+    if (project.type === "publication") return "Publication";
+    return project.type;
+  };
+
+  const renderButton = (project) => {
+    if (project.type === "company" && project.link) {
+      return (
+        <a href={project.link} target="_blank" rel="noreferrer" className="featured-project-button">
+          Visit <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </a>
+      );
+    }
+    if (project.type === "publication" && project.link) {
+      return (
+        <a href={project.link} target="_blank" rel="noreferrer" className="featured-project-button">
+          Read <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </a>
+      );
+    }
+    if (project.type === "In-progress") {
+      return (
+        <button className="featured-project-button is-muted" disabled>
+          In&nbsp;Progress
+        </button>
+      );
+    }
+    if (!project.link) {
+      return (
+        <button className="featured-project-button is-muted" disabled>
+          Private&nbsp;Project
+        </button>
+      );
+    }
+    return (
+      <a href={project.link} target="_blank" rel="noreferrer" className="featured-project-button">
+        View <FontAwesomeIcon icon={faExternalLinkAlt} />
+      </a>
+    );
+  };
+
+  const filteredProjects = projectsInfo.filter((project) => project.category === activeCategory);
+  const totalProjects = filteredProjects.length;
+  const viewCount = Math.min(perView, totalProjects);
+  const centerOffset = Math.floor(viewCount / 2);
+
+  const visibleProjects =
+    totalProjects === 0
+      ? []
+      : Array.from({ length: viewCount }, (_, i) => {
+          const idx = (currentIndex - centerOffset + i + totalProjects) % totalProjects;
+          return { ...filteredProjects[idx], _isCenter: i === centerOffset };
+        });
+
+  useEffect(() => {
+    if (totalProjects <= viewCount || viewCount === 0) return;
+    const id = setInterval(() => {
+      setCurrentIndex((index) => (index + 1) % totalProjects);
+    }, 5200);
+    return () => clearInterval(id);
+  }, [totalProjects, viewCount, activeCategory]);
+
   const handleBackButtonClick = () => {
-    document.getElementById("services").scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("services").scrollIntoView({ behavior: "smooth" });
     setShowBackButton(false);
   };
 
@@ -62,84 +162,126 @@ const Portfolio = () => {
     setIsHovered(false);
   };
 
+  const prev = () => {
+    if (totalProjects === 0) return;
+    setCurrentIndex((index) => (index - 1 + totalProjects) % totalProjects);
+  };
+
+  const next = () => {
+    if (totalProjects === 0) return;
+    setCurrentIndex((index) => (index + 1) % totalProjects);
+  };
+
   const styles = {
     circle: {
-      position: 'fixed',
-      bottom: '20px',
-      right: '20px',
-      zIndex: '1000',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '50px',
-      height: '50px',
-      borderRadius: '50%',
-      backgroundColor: '#f0f0f0',
-      cursor: 'pointer',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      zIndex: "1000",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      backgroundColor: "#f0f0f0",
+      cursor: "pointer",
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
     },
     arrow: {
-      stroke: '#333',
+      stroke: "#333",
     },
     circleHover: {
-      transform: 'scale(1.1)',
+      transform: "scale(1.1)",
     },
-
   };
 
   return (
-    <div id="portfolio" className="portfolio-wrapper">
-      <div className="container">
-        <h1 className="text-uppercase text-center py-5">Portfolio</h1>
-        <p className="text-center">
-          This is my github page{" "}
-          <a href="https://github.com/2015pushkar" target="_blank" rel="noreferrer">
-            https://github.com/2015pushkar
-          </a>
-        </p>
-
-        <h2 className="text-center py-4" ref={(el) => {
-          languagesRef.current = el;
-          webdevRef.current = el;
-        }}>Full Stack Development</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Full Stack Development")}
+    <section id="portfolio" className="portfolio-section py-5" ref={portfolioRef}>
+      <div className="container-fluid px-4 px-lg-5 position-relative">
+        <div className="portfolio-header text-center">
+          <h2 className="portfolio-title">Portfolio</h2>
+          <p className="portfolio-subtitle">
+            Explore selected projects across full-stack engineering, data systems, and research work.
+          </p>
+          <p className="portfolio-link">
+            <a href="https://github.com/2015pushkar" target="_blank" rel="noreferrer">
+              github.com/2015pushkar
+            </a>
+          </p>
         </div>
 
-        <h2 className="text-center py-4" ref={(el) => {
-          cloudRef.current = el;
-          biRef.current = el;
-          databasesRef.current = el;
-        }}>Data Engineering & Data Analytics</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Data Engineering & Data Analytics")}
+        <div className="portfolio-tabs" role="tablist" aria-label="Project categories">
+          {portfolioCategories.map((category) => (
+            <button
+              key={category.id}
+              type="button"
+              role="tab"
+              aria-selected={activeCategory === category.id}
+              aria-controls={`portfolio-${slugify(category.id)}`}
+              className={`portfolio-tab ${activeCategory === category.id ? "is-active" : ""}`}
+              onClick={() => setActiveCategory(category.id)}
+              ref={(el) => setTabRef(category.id, el)}
+            >
+              {category.label}
+            </button>
+          ))}
         </div>
 
-        <h2 className="text-center py-4">Machine Learning</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Machine Learning")}
-        </div>
+        <div
+          key={activeCategory}
+          id={`portfolio-${slugify(activeCategory)}`}
+          role="tabpanel"
+          aria-hidden={false}
+          className="portfolio-panel is-active position-relative"
+        >
+          <div className="featured-projects-carousel">
+            {visibleProjects.map((project) => (
+              <article
+                className={`featured-project-card portfolio-card ${project._isCenter ? "is-center" : ""}`}
+                key={project.slug}
+                style={{ width: `calc(100% / ${perView} - 1rem)` }}
+              >
+                <div className="featured-project-image">
+                  <img src={project.cover} alt={project.title} />
+                  <span className="featured-project-type">{typeLabel(project)}</span>
+                </div>
+                <div className="featured-project-body">
+                  <h3 className="featured-project-title">{project.title}</h3>
+                  <p className="featured-project-tagline">{project.summary}</p>
+                  <div className="featured-project-tags">
+                    {project.techStack.map((tech, index) => (
+                      <span key={`${project.slug}-${index}`} className="featured-project-tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="featured-project-cta">{renderButton(project)}</div>
+                </div>
+              </article>
+            ))}
+          </div>
 
-        <h2 className="text-center py-4">Computer Networks</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Computer Networks")}
-        </div>
-
-        <h2 className="text-center py-4">Embedded Systems</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Embedded Systems")}
-        </div>
-
-        <h2 className="text-center py-4">Publications</h2>
-        <div className="row justify-content-center">
-          {renderProjects("Publications")}
+          {totalProjects > viewCount && (
+            <>
+              <button className="featured-project-nav is-prev" onClick={prev} aria-label="Previous project">
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <button className="featured-project-nav is-next" onClick={next} aria-label="Next project">
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </>
+          )}
         </div>
       </div>
+
       {showBackButton && (
-        <div onClick={handleBackButtonClick}
+        <div
+          onClick={handleBackButtonClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          style={{ ...styles.circle, ...(isHovered ? styles.circleHover : {}) }}>
+          style={{ ...styles.circle, ...(isHovered ? styles.circleHover : {}) }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -156,7 +298,7 @@ const Portfolio = () => {
           </svg>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

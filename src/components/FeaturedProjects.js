@@ -2,23 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { featuredProjects } from '../projectsInfo/projectsInfo';
+import { projectsInfo } from '../projectsInfo/projectsInfo';
 
 /**
  * @typedef {{
  *   title: string;
  *   slug: string;
  *   cover: string;
- *   tagline: string;
+ *   summary: string;
  *   link?: string;
  *   techStack: string[];
  *   type?: string;
  * }} FeaturedProject
  *
- * @typedef {{ featuredProjects: FeaturedProject[] }} FeaturedProjectsProps
- */
-
-/**
  * Responsive carousel showing 3 (lg), 2 (md), or 1 (sm) cards.
  * `currentIndex` always points to the *center* card, which is enlarged.
  * Continuous auto‑scroll every 3.5 s.
@@ -26,6 +22,7 @@ import { featuredProjects } from '../projectsInfo/projectsInfo';
 const FeaturedProjects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [perView, setPerView] = useState(3);
+  const featuredProjects = projectsInfo.filter((project) => project.feature);
 
   // breakpoints
   useEffect(() => {
@@ -61,11 +58,14 @@ const FeaturedProjects = () => {
 
   const typeLabel = (p) => {
     if (!p.type) return "Project";
+    if (p.type === "project") return "Project";
     if (p.type === "In-progress") return "In Progress";
     if (p.type === "Internship") return "Internship";
     if (p.type === "company") return "Company";
     if (p.type === "aws") return "AWS Pipeline";
     if (p.type === "client") return "Client";
+    if (p.type === "personal") return "Personal";
+    if (p.type === "publication") return "Publication";
     return p.type;
   };
 
@@ -128,7 +128,7 @@ const FeaturedProjects = () => {
               </div>
               <div className="featured-project-body">
                 <h3 className="featured-project-title">{p.title}</h3>
-                <p className="featured-project-tagline">{p.tagline}</p>
+                <p className="featured-project-tagline">{p.summary}</p>
                 <div className="featured-project-tags">
                   {p.techStack.map((t, idx) => (
                     <span key={idx} className="featured-project-tag">
