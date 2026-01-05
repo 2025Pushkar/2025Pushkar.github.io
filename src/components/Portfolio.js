@@ -7,8 +7,10 @@ import { BackButtonContext } from "./BackButtonContext";
 
 const portfolioCategories = [
   { id: "Distributed Systems", label: "Distributed Systems" },
+  { id: "Gen AI", label: "Gen AI" },
   { id: "Full Stack Development", label: "Full Stack" },
   { id: "Data Engineering & Data Analytics", label: "Data & Analytics" },
+  { id: "Data Structures & Algorithms", label: "Data Structures & Algorithms" },
   { id: "Machine Learning", label: "Machine Learning" },
   { id: "Computer Networks", label: "Networks" },
   { id: "Embedded Systems", label: "Embedded" },
@@ -24,7 +26,7 @@ const slugify = (value) =>
 const Portfolio = () => {
   const { languagesRef, webdevRef, cloudRef, biRef, databasesRef } = useContext(RefContext);
   const { showBackButton, setShowBackButton } = useContext(BackButtonContext);
-  const [activeCategory, setActiveCategory] = useState("Full Stack Development");
+  const [activeCategory, setActiveCategory] = useState("Distributed Systems");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [perView, setPerView] = useState(3);
   const portfolioRef = useRef(null);
@@ -235,32 +237,37 @@ const Portfolio = () => {
           aria-hidden={false}
           className="portfolio-panel is-active position-relative"
         >
-          <div className="featured-projects-carousel">
-            {visibleProjects.map((project) => (
-              <article
-                className={`featured-project-card portfolio-card ${project._isCenter ? "is-center" : ""}`}
-                key={project.slug}
-                style={{ width: `calc(100% / ${perView} - 1rem)` }}
-              >
-                <div className="featured-project-image">
-                  <img src={project.cover} alt={project.title} />
-                  <span className="featured-project-type">{typeLabel(project)}</span>
-                </div>
-                <div className="featured-project-body">
-                  <h3 className="featured-project-title">{project.title}</h3>
-                  <p className="featured-project-tagline">{project.summary}</p>
-                  <div className="featured-project-tags">
-                    {project.techStack.map((tech, index) => (
-                      <span key={`${project.slug}-${index}`} className="featured-project-tag">
-                        {tech}
-                      </span>
-                    ))}
+          {totalProjects === 0 ? (
+            <div className="portfolio-empty">More projects coming soon.</div>
+          ) : (
+            <div className="featured-projects-carousel">
+              {visibleProjects.map((project) => (
+                <article
+                  className={`featured-project-card portfolio-card ${project._isCenter ? "is-center" : ""}`}
+                  key={project.slug}
+                  style={{ width: `calc(100% / ${perView} - 1rem)` }}
+                >
+                  <div className="featured-project-image">
+                    <img src={project.cover} alt={project.title} />
+                    <span className="featured-project-type">{typeLabel(project)}</span>
                   </div>
-                  <div className="featured-project-cta">{renderButton(project)}</div>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="featured-project-body">
+                    <h3 className="featured-project-title">{project.title}</h3>
+                    <p className="featured-project-tagline">{project.summary}</p>
+                    <p className="featured-project-tags-title">Tech Stack</p>
+                    <div className="featured-project-tags">
+                      {project.techStack.map((tech, index) => (
+                        <span key={`${project.slug}-${index}`} className="featured-project-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="featured-project-cta">{renderButton(project)}</div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
 
           {totalProjects > viewCount && (
             <>

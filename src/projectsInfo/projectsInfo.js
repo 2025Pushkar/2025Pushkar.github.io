@@ -19,12 +19,14 @@ import watsontechtalent from "../image/watsontechtalent.png";
 import MLProcess from "../image/MLProcess.png";
 import todos from "../image/todos.png";
 import semantic_bi_chatbot from "../image/semantic_bi_chatbot.png";
+import leetcodeCover from "../image/semantic_similarity.png";
 import system_architecture_etl_aurora from "../image/system_architecture_etl_aurora.png";
 import system_architecture_airflow_spark_dynamodb from "../image/system_architecture_airflow_spark_dynamodb.png";
 import AWS_Ecosystem_Batch_Ingestion_and_Orchestration from "../image/AWS_Ecosystem_Batch_Ingestion_and_Orchestration.png";
 import system_architecture_concurrent_file_processing from "../image/system_architecture_concurrent_file_processing.png";
 import systemDesign from "../image/System design-1.jpeg";
 import Distributed_Image_Processing_and_Anomaly_Detection_architecture_diagram from "../image/Distributed_Image_Processing_and_Anomaly_Detection_architecture_diagram.png";
+import leetcode from "../image/leetcode.png";
 
 export const projectsInfo = [
   {
@@ -58,7 +60,7 @@ export const projectsInfo = [
     summary: "Developed digital assistants leveraging Next.js and generative AI for enhanced user experience.",
     link: "https://www.krtrimaiq.ai/platforms/digital-assistants",
     techStack: ["Next.js", "OpenAI", "Python"],
-    category: "Full Stack Development",
+    category: "Gen AI",
     type: "company",
   },
   {
@@ -79,7 +81,7 @@ export const projectsInfo = [
       "React-Bootstrap",
     ],
     category: "Full Stack Development",
-    type: "company",
+    type: "project",
   },
   {
     title: "Code Analysis and Visualization Platform",
@@ -100,6 +102,7 @@ export const projectsInfo = [
     link: null,
     techStack: ["React.js", "Bootstrap", "Python", "AWS Lambda", "AWS S3", "MongoDB"],
     category: "Full Stack Development",
+    type: "company",
   },
   {
     title: "My Portfolio Website",
@@ -119,7 +122,7 @@ export const projectsInfo = [
       "Snowflake Cortex-driven assistant that converts natural-language queries into KPI stories on a governed semantic layer.",
     link: null,
     techStack: ["Snowflake", "Cortex LLM", "Snowpark Python", "Streamlit"],
-    category: "Data Engineering & Data Analytics",
+    category: "Gen AI",
     feature: true,
     type: "Internship",
   },
@@ -153,6 +156,17 @@ export const projectsInfo = [
     category: "Distributed Systems",
     feature: true,
     type: "Distributed Systems",
+  },
+  {
+    title: "LeetCode Patterns and Solutions",
+    slug: "leetcode-patterns-and-solutions",
+    cover: leetcode,
+    summary:
+      "Curated LeetCode solutions organized by core data structures and algorithmic patterns, focused on clean Python implementations and problem-solving fluency.",
+    link: "https://github.com/2015pushkar/Leetcode",
+    techStack: ["Python", "Data Structures", "Algorithms", "LeetCode", "Problem Solving"],
+    category: "Data Structures & Algorithms",
+    type: "project",
   },
   {
     title: "Rental Apartments ETL (Aurora -> Redshift)",

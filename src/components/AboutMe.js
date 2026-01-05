@@ -57,12 +57,12 @@ const AboutMe = () => {
 
                 <div className="mt-4">
                   <p className="text-primary font-mono fw-bold mb-2">Top skills</p>
-                  <div className="d-flex flex-wrap gap-2">
-                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">Next.js</span>
-                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">Python</span>
-                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">SQL</span>
-                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">React.js</span>
-                    <span className="badge bg-secondary text-light px-3 py-2 mr-2">JavaScript</span>
+                  <div className="about-skills d-flex flex-wrap gap-2">
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">Next.js</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">Python</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">SQL</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">React.js</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">JavaScript</span>
                   </div>
                 </div>
               </div>

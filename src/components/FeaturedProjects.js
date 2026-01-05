@@ -129,6 +129,7 @@ const FeaturedProjects = () => {
               <div className="featured-project-body">
                 <h3 className="featured-project-title">{p.title}</h3>
                 <p className="featured-project-tagline">{p.summary}</p>
+                <p className="featured-project-tags-title">Tech Stack</p>
                 <div className="featured-project-tags">
                   {p.techStack.map((t, idx) => (
                     <span key={idx} className="featured-project-tag">
