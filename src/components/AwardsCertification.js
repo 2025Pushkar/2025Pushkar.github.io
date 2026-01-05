@@ -9,8 +9,13 @@ import ieeesscs from "../image/ieeesscs.png";
 import hackerrankreact from "../image/react-cert.png";
 import azureaifundamentals from "../image/azure-ai-fundamentals.png";
 import azuredatafundamentals from "../image/azure-data-fundamentals.png";
+import snowflakeAI from "../image/Technologies-Behind-Snowflake-AI-1024x682.png"
 
 const awards = [
+  {
+    name: "Building and Evaluating Data Agents",
+    imgSrc: snowflakeAI,
+  },
   {
     name: "Azure AI Fundamentals",
     imgSrc: azureaifundamentals,

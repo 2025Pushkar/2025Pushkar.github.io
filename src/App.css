@@ -1071,13 +1071,19 @@ textarea.input.form-control {
   row-gap: 0.5rem;
 }
 
+.about-skill-badge {
+  margin-bottom: 0.35rem;
+  margin-right: 0.2rem;
+}
+
 @media (max-width: 576px) {
   .about-skills {
     row-gap: 0.8rem;
   }
 
   .about-skill-badge {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
   }
 }
 
@@ -1554,22 +1560,18 @@ textarea.input.form-control {
   }
 
   .portfolio-tabs {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 0.75rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .portfolio-tabs::-webkit-scrollbar {
-    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0.25rem;
+    gap: 0.5rem;
   }
 
   .portfolio-tab {
     flex: 0 0 auto;
-    width: auto;
     justify-content: center;
+    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
   }
 }
 
