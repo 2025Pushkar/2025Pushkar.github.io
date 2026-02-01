@@ -44,7 +44,7 @@ const AboutMe = () => {
 
                 {/* Main Description */}
                 <p className="text-muted font-mono mb-3">
-                  I am an Analytics and Data Engineer with 4+ years of experience building data pipelines, star schemas, and analytics serving layers using SQL, Python, Spark, and Snowflake. I have delivered governed self-service analytics through semantic modeling and validated text-to-SQL workflows, and I apply ML techniques such as forecasting, anomaly detection, and smart narratives to help stakeholders make faster decisions.
+                  I am an Analytics and Data Engineer with almost 5 years of experience building data pipelines, star schemas, and analytics serving layers using SQL, Python, Spark, and Snowflake. I have delivered governed self-service analytics through semantic modeling and validated text-to-SQL workflows, and I apply ML techniques such as forecasting, anomaly detection, and smart narratives to help stakeholders make faster decisions.
                 </p>
 
                 <p className="text-muted font-mono mb-3">

@@ -19,12 +19,10 @@ import watsontechtalent from "../image/watsontechtalent.png";
 import MLProcess from "../image/MLProcess.png";
 import todos from "../image/todos.png";
 import semantic_bi_chatbot from "../image/semantic_bi_chatbot.png";
-import leetcodeCover from "../image/semantic_similarity.png";
 import system_architecture_etl_aurora from "../image/system_architecture_etl_aurora.png";
 import system_architecture_airflow_spark_dynamodb from "../image/system_architecture_airflow_spark_dynamodb.png";
 import AWS_Ecosystem_Batch_Ingestion_and_Orchestration from "../image/AWS_Ecosystem_Batch_Ingestion_and_Orchestration.png";
 import system_architecture_concurrent_file_processing from "../image/system_architecture_concurrent_file_processing.png";
-import systemDesign from "../image/System design-1.jpeg";
 import Distributed_Image_Processing_and_Anomaly_Detection_architecture_diagram from "../image/Distributed_Image_Processing_and_Anomaly_Detection_architecture_diagram.png";
 import leetcode from "../image/leetcode.png";
 

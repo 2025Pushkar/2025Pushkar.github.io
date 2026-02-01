@@ -114,7 +114,7 @@ const Services = () => {
         break;
       case 'databases':
         buttonText = 'Learn About My Database Projects';
-        buttonRef = biRef;
+        buttonRef = databasesRef;
         break;
       default:
         break;
