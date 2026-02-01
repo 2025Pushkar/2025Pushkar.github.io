@@ -62,7 +62,7 @@ const AboutMe = () => {
                     <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">SQL</span>
                     <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">Snowflake</span>
                     <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">Spark</span>
-                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">dbt</span>
+                    <span className="badge bg-secondary text-light px-3 py-2 about-skill-badge">TypeScript</span>
                   </div>
                 </div>
               </div>
